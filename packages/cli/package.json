@@ -39,6 +39,7 @@
   "oclif": {
     "commands": "./lib/commands",
     "bin": "bpl",
+    "scope": "@toucansam-bpl",
     "plugins": [
       "@oclif/plugin-autocomplete",
       "@oclif/plugin-help",
