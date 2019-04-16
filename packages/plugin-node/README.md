@@ -19,7 +19,7 @@ $ npm install -g @toucansam-bpl/plugin-node
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@toucansam-bpl/plugin-node/1.0.1-alpha.0 darwin-x64 node-v11.13.0
+@toucansam-bpl/plugin-node/1.0.2-alpha.0 darwin-x64 node-v11.13.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -43,7 +43,7 @@ OPTIONS
   --lines=lines
 ```
 
-_See code: [src/commands/node/logs.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/logs.ts)_
+_See code: [src/commands/node/logs.ts](https://github.com/toucansam-bpl/node/blob/v1.0.2-alpha.0/src/commands/node/logs.ts)_
 
 ## `oclif-example node:restart`
 
@@ -52,7 +52,7 @@ USAGE
   $ oclif-example node:restart
 ```
 
-_See code: [src/commands/node/restart.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/restart.ts)_
+_See code: [src/commands/node/restart.ts](https://github.com/toucansam-bpl/node/blob/v1.0.2-alpha.0/src/commands/node/restart.ts)_
 
 ## `oclif-example node:start`
 
@@ -61,11 +61,11 @@ USAGE
   $ oclif-example node:start
 
 OPTIONS
-  --log-level=debug|info|warn  (required) [default: debug] Log level for the bpl-node logs
+  --log-level=debug|info|warn  (required) [default: info] Log level for the bpl-node logs
   --node-dir=node-dir          (required) [default: /Users/bmavity/BPL-node] Directory containing bpl-node code
 ```
 
-_See code: [src/commands/node/start.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/start.ts)_
+_See code: [src/commands/node/start.ts](https://github.com/toucansam-bpl/node/blob/v1.0.2-alpha.0/src/commands/node/start.ts)_
 
 ## `oclif-example node:stop`
 
@@ -74,5 +74,5 @@ USAGE
   $ oclif-example node:stop
 ```
 
-_See code: [src/commands/node/stop.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/stop.ts)_
+_See code: [src/commands/node/stop.ts](https://github.com/toucansam-bpl/node/blob/v1.0.2-alpha.0/src/commands/node/stop.ts)_
 <!-- commandsstop -->
