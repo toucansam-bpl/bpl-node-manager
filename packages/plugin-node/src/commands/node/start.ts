@@ -11,7 +11,7 @@ const exists = promisify(existsRaw)
 export class NodeStartCommand extends Command {
   static flags = {
     "log-level": flags.string({
-      default: 'debug',
+      default: 'info',
       description: 'Log level for the bpl-node logs',
       options: ['debug', 'info', 'warn'],
       required: true,
