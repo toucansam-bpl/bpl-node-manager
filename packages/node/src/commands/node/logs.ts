@@ -1,7 +1,7 @@
 import { Command } from '@oclif/command'
 import { flags } from '@oclif/parser'
 
-import { runLog } from '@toucansam-bpl/cli-shared'
+import runLog from '../../runLog'
 
 
 export class NodeLogsCommand extends Command {
