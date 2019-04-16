@@ -19,7 +19,7 @@ $ npm install -g @toucansam-bpl/plugin-monitor
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@toucansam-bpl/plugin-monitor/0.9.0 darwin-x64 node-v11.13.0
+@toucansam-bpl/plugin-monitor/0.9.1-1 darwin-x64 node-v11.13.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -28,25 +28,47 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example hello [FILE]`](#oclif-example-hello-file)
+* [`oclif-example monitor:logs`](#oclif-example-monitorlogs)
+* [`oclif-example monitor:run`](#oclif-example-monitorrun)
+* [`oclif-example monitor:start`](#oclif-example-monitorstart)
+* [`oclif-example monitor:stop`](#oclif-example-monitorstop)
 
-## `oclif-example hello [FILE]`
-
-describe the command here
+## `oclif-example monitor:logs`
 
 ```
 USAGE
-  $ oclif-example hello [FILE]
+  $ oclif-example monitor:logs
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ oclif-example hello
-  hello world from ./src/hello.ts!
+  --lines=lines
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v0.9.0/src/commands/hello.ts)_
+_See code: [src/commands/monitor/logs.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v0.9.1-1/src/commands/monitor/logs.ts)_
+
+## `oclif-example monitor:run`
+
+```
+USAGE
+  $ oclif-example monitor:run
+```
+
+_See code: [src/commands/monitor/run.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v0.9.1-1/src/commands/monitor/run.ts)_
+
+## `oclif-example monitor:start`
+
+```
+USAGE
+  $ oclif-example monitor:start
+```
+
+_See code: [src/commands/monitor/start.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v0.9.1-1/src/commands/monitor/start.ts)_
+
+## `oclif-example monitor:stop`
+
+```
+USAGE
+  $ oclif-example monitor:stop
+```
+
+_See code: [src/commands/monitor/stop.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v0.9.1-1/src/commands/monitor/stop.ts)_
 <!-- commandsstop -->
