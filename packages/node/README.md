@@ -19,7 +19,7 @@ $ npm install -g @toucansam-bpl/plugin-node
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@toucansam-bpl/plugin-node/1.0.0-alpha.0 darwin-x64 node-v11.13.0
+@toucansam-bpl/plugin-node/1.0.1-alpha.0 darwin-x64 node-v11.13.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -28,9 +28,22 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`oclif-example node:logs`](#oclif-example-nodelogs)
 * [`oclif-example node:restart`](#oclif-example-noderestart)
 * [`oclif-example node:start`](#oclif-example-nodestart)
 * [`oclif-example node:stop`](#oclif-example-nodestop)
+
+## `oclif-example node:logs`
+
+```
+USAGE
+  $ oclif-example node:logs
+
+OPTIONS
+  --lines=lines
+```
+
+_See code: [src/commands/node/logs.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/logs.ts)_
 
 ## `oclif-example node:restart`
 
@@ -39,7 +52,7 @@ USAGE
   $ oclif-example node:restart
 ```
 
-_See code: [src/commands/node/restart.ts](https://github.com/toucansam-bpl/node/blob/v1.0.0-alpha.0/src/commands/node/restart.ts)_
+_See code: [src/commands/node/restart.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/restart.ts)_
 
 ## `oclif-example node:start`
 
@@ -52,7 +65,7 @@ OPTIONS
   --node-dir=node-dir          (required) [default: /Users/bmavity/BPL-node] Directory containing bpl-node code
 ```
 
-_See code: [src/commands/node/start.ts](https://github.com/toucansam-bpl/node/blob/v1.0.0-alpha.0/src/commands/node/start.ts)_
+_See code: [src/commands/node/start.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/start.ts)_
 
 ## `oclif-example node:stop`
 
@@ -61,5 +74,5 @@ USAGE
   $ oclif-example node:stop
 ```
 
-_See code: [src/commands/node/stop.ts](https://github.com/toucansam-bpl/node/blob/v1.0.0-alpha.0/src/commands/node/stop.ts)_
+_See code: [src/commands/node/stop.ts](https://github.com/toucansam-bpl/node/blob/v1.0.1-alpha.0/src/commands/node/stop.ts)_
 <!-- commandsstop -->

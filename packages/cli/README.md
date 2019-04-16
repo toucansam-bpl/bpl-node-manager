@@ -19,7 +19,7 @@ $ npm install -g bpl-cli
 $ bpl COMMAND
 running command...
 $ bpl (-v|--version|version)
-bpl-cli/1.0.0-alpha.0 darwin-x64 node-v11.13.0
+bpl-cli/1.0.1-alpha.0 darwin-x64 node-v11.13.0
 $ bpl --help [COMMAND]
 USAGE
   $ bpl COMMAND
