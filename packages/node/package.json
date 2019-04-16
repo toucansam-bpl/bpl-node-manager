@@ -1,0 +1,68 @@
+{
+  "name": "@toucansam-bpl/plugin-node",
+  "description": "Node management plugin for BPL Node Manager",
+  "version": "0.9.0",
+  "author": "toucansam",
+  "bugs": "https://github.com/toucansam-bpl/node/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.13",
+    "@oclif/config": "^1.12.12",
+    "@toucansam-bpl/cli-shared": "^0.9.0",
+    "node-fetch": "^2.3.0",
+    "pm2": "^3.5.0",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.0",
+    "@oclif/plugin-help": "^2.1.6",
+    "@oclif/tslint": "^3.1.1",
+    "@types/node": "^10.14.4",
+    "globby": "^8.0.2",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/yarn.lock"
+  ],
+  "homepage": "https://github.com/toucansam-bpl/node",
+  "keywords": [
+    "oclif-plugin"
+  ],
+  "license": "MIT",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "oclif-example",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ],
+    "topics": {
+      "node:logs": {
+        "description": "shows the logs for BPL node"
+      },
+      "node:restart": {
+        "description": "restarts BPL node"
+      },
+      "node:start": {
+        "description": "starts BPL node"
+      },
+      "node:stop": {
+        "description": "stops BPL node"
+      }
+    }
+  },
+  "repository": "toucansam-bpl/node",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p . -t stylish",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
