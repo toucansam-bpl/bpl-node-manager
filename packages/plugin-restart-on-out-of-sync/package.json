@@ -1,15 +1,12 @@
 {
-  "name": "@toucansam-bpl/plugin-monitor",
-  "description": "Monitors BPL node to ensure it stays in sync",
-  "version": "0.9.1-2",
+  "name": "@toucansam-bpl/plugin-restart-on-out-of-sync",
+  "description": "Restarts BPL node when it becomes out of sync",
+  "version": "0.9.0",
   "author": "toucansam",
-  "bugs": "https://github.com/toucansam-bpl/plugin-monitor/issues",
+  "bugs": "https://github.com/toucansam-bpl/plugin-restart-on-out-of-sync/issues",
   "dependencies": {
-    "@oclif/command": "^1.5.12",
+    "@oclif/command": "^1.5.13",
     "@oclif/config": "^1.12.12",
-    "@toucansam-bpl/cli-shared": "^1.0.1-alpha.0",
-    "@types/node-fetch": "^2.3.2",
-    "node-fetch": "^2.3.0",
     "pm2": "^3.5.0",
     "tslib": "^1.9.3"
   },
@@ -32,7 +29,7 @@
     "/oclif.manifest.json",
     "/yarn.lock"
   ],
-  "homepage": "https://github.com/toucansam-bpl/plugin-monitor",
+  "homepage": "https://github.com/toucansam-bpl/plugin-restart-on-out-of-sync",
   "keywords": [
     "oclif-plugin"
   ],
@@ -42,23 +39,9 @@
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
-    ],
-    "topics": {
-      "monitor:logs": {
-        "description": "Shows the logs for the BPL Node monitor process"
-      },
-      "monitor:run": {
-        "description": "Checks the BPL Node process to see if it in sync and forging"
-      },
-      "monitor:start": {
-        "description": "Starts the BPL Node monitor"
-      },
-      "monitor:stop": {
-        "description": "Stops the BPL Node monitor"
-      }
-    }
+    ]
   },
-  "repository": "toucansam-bpl/plugin-monitor",
+  "repository": "toucansam-bpl/plugin-restart-on-out-of-sync",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
