@@ -58,6 +58,9 @@
     }
   },
   "repository": "toucansam-bpl/node",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",

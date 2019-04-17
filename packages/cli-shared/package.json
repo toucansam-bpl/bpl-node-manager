@@ -3,6 +3,9 @@
   "version": "1.0.4-alpha.0",
   "description": "Shared functionality for BPL Node Manager",
   "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepack": "rm -rf lib && tsc -b --force",
     "test": "echo \"Error: no test specified\" && exit 1"
