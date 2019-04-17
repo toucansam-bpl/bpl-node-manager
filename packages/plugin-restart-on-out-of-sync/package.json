@@ -36,6 +36,9 @@
   "license": "MIT",
   "oclif": {
     "commands": "./lib/commands",
+    "hooks": {
+      "node-out-of-sync": "./lib/hooks/node-out-of-sync/restart"
+    },
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
@@ -45,7 +48,7 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   }

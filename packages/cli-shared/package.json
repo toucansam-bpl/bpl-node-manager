@@ -4,7 +4,7 @@
   "description": "Shared functionality for BPL Node Manager",
   "main": "lib/index.js",
   "scripts": {
-    "prepack": "rm -rf lib && tsc -b",
+    "prepack": "rm -rf lib && tsc -b --force",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "toucansam",
