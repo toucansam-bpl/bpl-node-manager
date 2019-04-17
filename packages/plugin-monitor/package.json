@@ -1,7 +1,7 @@
 {
   "name": "@toucansam-bpl/plugin-monitor",
   "description": "Monitors BPL node to ensure it stays in sync",
-  "version": "1.0.5-alpha.0",
+  "version": "1.0.6-alpha.0",
   "author": "toucansam",
   "bugs": "https://github.com/toucansam-bpl/plugin-monitor/issues",
   "dependencies": {
