@@ -19,7 +19,7 @@ $ npm install -g @toucansam-bpl/plugin-monitor
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@toucansam-bpl/plugin-monitor/1.0.2-alpha.0 darwin-x64 node-v11.13.0
+@toucansam-bpl/plugin-monitor/1.0.3-alpha.0 darwin-x64 node-v11.13.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -43,7 +43,7 @@ OPTIONS
   --lines=lines
 ```
 
-_See code: [src/commands/monitor/logs.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.2-alpha.0/src/commands/monitor/logs.ts)_
+_See code: [src/commands/monitor/logs.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.3-alpha.0/src/commands/monitor/logs.ts)_
 
 ## `oclif-example monitor:run`
 
@@ -52,7 +52,7 @@ USAGE
   $ oclif-example monitor:run
 ```
 
-_See code: [src/commands/monitor/run.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.2-alpha.0/src/commands/monitor/run.ts)_
+_See code: [src/commands/monitor/run.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.3-alpha.0/src/commands/monitor/run.ts)_
 
 ## `oclif-example monitor:start`
 
@@ -61,7 +61,7 @@ USAGE
   $ oclif-example monitor:start
 ```
 
-_See code: [src/commands/monitor/start.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.2-alpha.0/src/commands/monitor/start.ts)_
+_See code: [src/commands/monitor/start.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.3-alpha.0/src/commands/monitor/start.ts)_
 
 ## `oclif-example monitor:stop`
 
@@ -70,5 +70,5 @@ USAGE
   $ oclif-example monitor:stop
 ```
 
-_See code: [src/commands/monitor/stop.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.2-alpha.0/src/commands/monitor/stop.ts)_
+_See code: [src/commands/monitor/stop.ts](https://github.com/toucansam-bpl/plugin-monitor/blob/v1.0.3-alpha.0/src/commands/monitor/stop.ts)_
 <!-- commandsstop -->
