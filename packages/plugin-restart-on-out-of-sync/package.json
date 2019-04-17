@@ -1,7 +1,7 @@
 {
   "name": "@toucansam-bpl/plugin-restart-on-out-of-sync",
   "description": "Restarts BPL node when it becomes out of sync",
-  "version": "1.0.4-alpha.0",
+  "version": "1.0.5-alpha.0",
   "author": "toucansam",
   "bugs": "https://github.com/toucansam-bpl/plugin-restart-on-out-of-sync/issues",
   "dependencies": {
