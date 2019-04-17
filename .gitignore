@@ -7,5 +7,6 @@
 /tmp
 node_modules
 
+lib
 oclif.manifest.json
 tsconfig.tsbuildinfo
