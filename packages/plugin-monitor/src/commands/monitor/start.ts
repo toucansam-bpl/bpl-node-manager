@@ -12,7 +12,7 @@ export class MonitorStartCommand extends Command {
       }
 
       const monitorOptions = {
-        cwd: resolve(__dirname, '../../monitor'),
+        cwd: resolve(__dirname, '..', '..'),
         exp_backoff_restart_delay: 100,
         name: 'bpl-monitor',
         script: 'runner.js'
