@@ -1,7 +1,7 @@
 {
-  "name": "@toucansam-bpl/cli-shared",
+  "name": "@toucansam-bpl/cli-core",
   "version": "1.0.5-alpha.0",
-  "description": "Shared functionality for BPL Node Manager",
+  "description": "Core functionality for BPL Node Manager",
   "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
