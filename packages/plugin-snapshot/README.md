@@ -19,7 +19,7 @@ $ npm install -g @toucansam-bpl/plugin-snapshot
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@toucansam-bpl/plugin-snapshot/0.9.0 darwin-x64 node-v11.13.0
+@toucansam-bpl/plugin-snapshot/1.0.8-alpha.0 darwin-x64 node-v11.13.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -28,25 +28,14 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example hello [FILE]`](#oclif-example-hello-file)
+* [`oclif-example snapshot:restore`](#oclif-example-snapshotrestore)
 
-## `oclif-example hello [FILE]`
-
-describe the command here
+## `oclif-example snapshot:restore`
 
 ```
 USAGE
-  $ oclif-example hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ oclif-example hello
-  hello world from ./src/hello.ts!
+  $ oclif-example snapshot:restore
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/toucansam-bpl/plugin-snapshot/blob/v0.9.0/src/commands/hello.ts)_
+_See code: [src/commands/snapshot/restore.ts](https://github.com/toucansam-bpl/plugin-snapshot/blob/v1.0.8-alpha.0/src/commands/snapshot/restore.ts)_
 <!-- commandsstop -->

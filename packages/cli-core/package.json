@@ -1,6 +1,6 @@
 {
   "name": "@toucansam-bpl/cli-core",
-  "version": "1.0.5-alpha.0",
+  "version": "1.0.8-alpha.0",
   "description": "Core functionality for BPL Node Manager",
   "main": "lib/index.js",
   "publishConfig": {
