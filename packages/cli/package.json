@@ -13,6 +13,7 @@
     "@oclif/plugin-help": "^2.1.6",
     "@oclif/plugin-not-found": "^1.2.2",
     "@oclif/plugin-plugins": "^1.7.8",
+    "@toucansam-bpl/cli-core": "file:../cli-core",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
@@ -48,6 +49,7 @@
     ]
   },
   "scripts": {
+    "postinstall": "node ./lib/init.js",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",

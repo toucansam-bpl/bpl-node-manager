@@ -1,8 +1,7 @@
-import config from './config'
-import runLog from './runLog'
+import * as c from './config'
+import rl from './runLog'
 
 
-export default {
-  config,
-  runLog,
-}
+export const config = c
+
+export const runLog = rl
