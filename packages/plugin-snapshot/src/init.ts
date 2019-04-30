@@ -1,7 +1,6 @@
+import { config } from '@toucansam-bpl/cli-core'
 import { existsSync, mkdirSync } from 'fs'
 import { resolve } from 'path'
-
-import { config } from '@toucansam-bpl/cli-core'
 
 const snapshotDir = resolve(config.configDir, 'snapshots')
 
