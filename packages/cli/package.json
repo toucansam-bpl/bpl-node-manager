@@ -40,6 +40,8 @@
     ]
   },
   "scripts": {
+    "clean": "rm -Rf lib",
+    "compile": "tsc -b --force",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
