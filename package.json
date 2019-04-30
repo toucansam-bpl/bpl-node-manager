@@ -32,6 +32,7 @@
     "bpl-cli": "file:packages/cli"
   },
   "scripts": {
+    "compile": "lerna run compile",
     "test": "lerna run test"
   }
 }

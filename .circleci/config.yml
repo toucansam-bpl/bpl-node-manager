@@ -34,7 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # compile typescript
-      - run: lerna run compile
+      - run: npm run compile
 
       # run tests!
       - run: npm run test
