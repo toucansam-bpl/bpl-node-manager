@@ -1,9 +1,7 @@
 import { Command } from '@oclif/command'
-
-import { connect, disconnect, start, } from 'pm2'
+import { connect, disconnect, start } from 'pm2'
 
 import config from '../../bpl-monitor.ecosystem.config'
-
 
 export class MonitorStartCommand extends Command {
   async run() {
@@ -13,10 +11,10 @@ export class MonitorStartCommand extends Command {
         process.exit(2)
       }
 
-      start(config, (err, apps) => {
+      start(config, err2 => {
         disconnect()
 
-        if (err) throw err
+        if (err2) throw err2
       })
     })
   }

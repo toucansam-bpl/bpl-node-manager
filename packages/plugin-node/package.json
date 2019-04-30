@@ -7,6 +7,7 @@
   "dependencies": {
     "@oclif/command": "^1.5.13",
     "@oclif/config": "^1.12.12",
+    "@oclif/parser": "^3.8.0",
     "@toucansam-bpl/cli-core": "file:../cli-core",
     "node-fetch": "^2.3.0",
     "pm2": "^3.5.0",
@@ -58,6 +59,5 @@
     "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
     "test": "echo \"plugin-node does not have tests yet\"",
     "version": "oclif-dev readme && git add README.md"
-  },
-  "gitHead": "8095a90da0341dab65e367910e732b120a67fffa"
+  }
 }

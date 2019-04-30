@@ -48,6 +48,5 @@
     "test": "echo \"cli does not have tests yet\"",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts",
-  "gitHead": "8095a90da0341dab65e367910e732b120a67fffa"
+  "types": "lib/index.d.ts"
 }

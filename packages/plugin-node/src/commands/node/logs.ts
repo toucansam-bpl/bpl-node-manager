@@ -1,8 +1,7 @@
 import { Command } from '@oclif/command'
 import { flags } from '@oclif/parser'
 
-import runLog from '../../runLog'
-
+import runLog from '../../run-log'
 
 export class NodeLogsCommand extends Command {
   static flags = {
@@ -11,6 +10,6 @@ export class NodeLogsCommand extends Command {
 
   async run() {
     const { flags } = this.parse(NodeLogsCommand)
-    runLog('bpl-node', flags.lines)
+    runLog('bpl-node', flags.lines).catch(ex => console.log(ex))
   }
 }

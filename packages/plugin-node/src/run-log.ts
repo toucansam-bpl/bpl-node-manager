@@ -1,10 +1,9 @@
 import { spawn } from 'child_process'
-import { exists as rawExists } from 'fs'
+import { existsSync as rawExists } from 'fs'
 import { resolve } from 'path'
 import { promisify } from 'util'
 
 const exists = promisify(rawExists)
-
 
 function runPm2LogsCommand(pm2path: string, processName: string, lines: number | undefined) {
   const commandArgs = ['logs', processName]
@@ -30,10 +29,9 @@ export default async function runLogs(processName: string, lines: number | undef
         return success()
       }
 
-      reject(new Error(`Could not find module pm2 installed.`))
-    }
-    catch (ex) {
-      reject (ex)
+      reject(new Error('Could not find module pm2 installed.'))
+    } catch (ex) {
+      reject(ex)
     }
   })
 }

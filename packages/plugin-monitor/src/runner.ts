@@ -11,4 +11,4 @@ setInterval(() => checkNodeStatus(), fifteenMinutes)
 
 console.log(`BPL node monitor started.`)
 
-checkNodeStatus()
+checkNodeStatus().catch(ex => console.log(ex))

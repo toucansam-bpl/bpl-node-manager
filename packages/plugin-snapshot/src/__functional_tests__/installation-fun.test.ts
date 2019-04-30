@@ -1,6 +1,6 @@
 /* tslint:disable:no-floating-promises */
-import { exists as existsWithCallback } from 'fs'
 import * as execa from 'execa'
+import { existsSync as existsWithCallback } from 'fs'
 import { resolve } from 'path'
 import { describe } from 'riteway'
 import { promisify } from 'util'
