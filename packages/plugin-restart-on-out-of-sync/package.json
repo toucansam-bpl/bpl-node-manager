@@ -43,7 +43,7 @@
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
+    "test": "echo \"plugin-restart-on-out-of-sync does not have tests yet\"",
     "version": "oclif-dev readme && git add README.md"
   }
 }

@@ -14,5 +14,8 @@
   },
   "dependencies": {
     "oclif": "^1.13.1"
+  },
+  "scripts": {
+    "test": "npx lerna run test"
   }
 }

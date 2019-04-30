@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prepack": "rm -rf lib && tsc -b --force",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"cli-core does not have tests yet\""
   },
   "author": "toucansam",
   "license": "MIT",
