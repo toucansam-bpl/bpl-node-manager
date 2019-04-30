@@ -3,3 +3,6 @@ How eslint and prettier were installed https://blog.echobind.com/integrating-pre
 On configuring CI build:
 
 https://github.com/lerna/lerna/issues/1324
+
+Relative links within package
+https://github.com/lerna/lerna/issues/1679

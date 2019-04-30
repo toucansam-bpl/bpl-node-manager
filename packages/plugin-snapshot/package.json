@@ -19,22 +19,6 @@
     "tslib": "^1.9.3",
     "watch": "^1.0.2"
   },
-  "devDependencies": {
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.2.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "nyc": "^14.0.0",
-    "prettier": "^1.17.0",
-    "riteway": "^6.0.3",
-    "tap-nirvana": "^1.1.0",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5"
-  },
   "engines": {
     "node": ">=8.0.0"
   },
@@ -68,7 +52,7 @@
     "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
     "test": "npm run test:functional",
     "test:ci": "npm run -s test && npm run -s test:functional",
-    "test:functional": "nyc riteway src/**/*-fun.test.js | tap-nirvana",
+    "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
     "test:unit": "npm run ts && nyc riteway lib/**/*-rt.test.js | tap-nirvana",
     "ts": "npm run clean && npm run -s compile",
     "typecheck": "npx -p typescript tsc --rootDir . src/test.js --allowJs --checkJs --noEmit --lib es6 --jsx react && echo 'TypeScript check complete.'",

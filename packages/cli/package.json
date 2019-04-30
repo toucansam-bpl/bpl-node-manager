@@ -16,7 +16,6 @@
     "@toucansam-bpl/cli-core": "file:../cli-core",
     "tslib": "^1.9.3"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=8.0.0"
   },
