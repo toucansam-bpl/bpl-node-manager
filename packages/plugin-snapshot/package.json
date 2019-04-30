@@ -45,7 +45,6 @@
     "clean": "rm -Rf lib",
     "compile": "tsc -b --force",
     "lint": "eslint src && echo 'Lint complete.'",
-    "postinstall": "node lib/init.js",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "precommit": "npm run -s test && npm run -s lint && npm run -s typecheck",
