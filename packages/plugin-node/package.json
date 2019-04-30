@@ -7,21 +7,12 @@
   "dependencies": {
     "@oclif/command": "^1.5.13",
     "@oclif/config": "^1.12.12",
-    "@toucansam-bpl/cli-core": "^1.0.8-alpha.0",
+    "@toucansam-bpl/cli-core": "file:../cli-core",
     "node-fetch": "^2.3.0",
     "pm2": "^3.5.0",
     "tslib": "^1.9.3"
   },
-  "devDependencies": {
-    "@oclif/dev-cli": "^1.22.0",
-    "@oclif/plugin-help": "^2.1.6",
-    "@oclif/tslint": "^3.1.1",
-    "@types/node": "^10.14.4",
-    "globby": "^8.0.2",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.15.0",
-    "typescript": "^3.4.3"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=8.0.0"
   },

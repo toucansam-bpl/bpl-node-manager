@@ -13,18 +13,10 @@
     "@oclif/plugin-help": "^2.1.6",
     "@oclif/plugin-not-found": "^1.2.2",
     "@oclif/plugin-plugins": "^1.7.8",
-    "@toucansam-bpl/cli-core": "^1.0.8-alpha.0",
+    "@toucansam-bpl/cli-core": "file:../cli-core",
     "tslib": "^1.9.3"
   },
-  "devDependencies": {
-    "@oclif/dev-cli": "^1.22.0",
-    "@oclif/tslint": "^3.1.1",
-    "@types/node": "^10.14.4",
-    "globby": "^8.0.2",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.15.0",
-    "typescript": "^3.4.3"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=8.0.0"
   },
