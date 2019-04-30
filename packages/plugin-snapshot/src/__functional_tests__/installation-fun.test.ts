@@ -8,10 +8,10 @@ import { promisify } from 'util'
 const exists = promisify(existsWithCallback)
 
 const runCommand = async (command = '', options = {}) =>
-  new Promise(async (resolve, reject) => {
+  new Promise(async (res, reject) => {
     try {
       const { stdout } = await execa.shell(command, options)
-      resolve(stdout)
+      res(stdout)
     } catch (ex) {
       reject(ex)
     }
