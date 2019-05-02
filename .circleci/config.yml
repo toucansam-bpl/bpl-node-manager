@@ -39,3 +39,7 @@ jobs:
 
       # run tests!
       - run: npm run test
+
+      # install cli globally
+      - run: npm install -g /home/circleci/repo/packages/cli
+      - run: bpl help
