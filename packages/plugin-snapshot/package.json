@@ -49,13 +49,13 @@
     "posttest": "tslint -p . -t stylish",
     "precommit": "npm run -s test && npm run -s lint && npm run -s typecheck",
     "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
-    "test": "npm run test:functional",
-    "test:ci": "npm run -s test && npm run -s test:functional",
+    "test": "npm run test:unit",
+    "test:ci": "npm run -s test",
     "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
     "test:unit": "npm run ts && nyc riteway lib/**/*-rt.test.js | tap-nirvana",
     "ts": "npm run clean && npm run -s compile",
     "typecheck": "npx -p typescript tsc --rootDir . src/test.js --allowJs --checkJs --noEmit --lib es6 --jsx react && echo 'TypeScript check complete.'",
     "version": "oclif-dev readme && git add README.md",
-    "watch": "watch 'clear && npm run -s test | tap-nirvana && npm run -s lint && npm run -s typecheck' source"
+    "watch": "watch 'npm run -s test | tap-nirvana && npm run -s lint && npm run -s typecheck' src"
   }
 }

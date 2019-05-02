@@ -9,12 +9,25 @@
   "author": "toucansam",
   "license": "MIT",
   "dependencies": {
-    "tslib": "^1.9.3"
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.5"
+  },
+  "devDependencies": {
+    "nyc": "^14.0.0",
+    "riteway": "^6.0.3",
+    "tap-nirvana": "^1.1.0",
+    "watch": "^1.0.2"
   },
   "scripts": {
     "clean": "rm -Rf lib",
     "compile": "tsc -b --force",
     "prepack": "rm -rf lib && tsc -b --force",
-    "test": "echo \"cli-core does not have tests yet\""
+    "test": "npm run test:unit",
+    "test:ci": "npm run -s test",
+    "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
+    "test:integration": "nyc riteway lib/**/*-int.test.js | tap-nirvana",
+    "test:unit": "npm run ts && nyc riteway lib/**/*-rt.test.js | tap-nirvana",
+    "ts": "npm run clean && npm run -s compile",
+    "watch": "watch 'npm run -s test | tap-nirvana' src"
   }
 }
