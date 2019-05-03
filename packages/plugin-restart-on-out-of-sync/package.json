@@ -36,7 +36,6 @@
   ],
   "license": "MIT",
   "oclif": {
-    "commands": "./lib/commands",
     "hooks": {
       "node-out-of-sync": "./lib/hooks/node-out-of-sync/restart"
     },
