@@ -35,6 +35,7 @@
   "scripts": {
     "clean": "lerna run clean",
     "compile": "lerna run compile",
+    "prepack": "lerna run prepack",
     "test": "lerna run test",
     "watch": "clear && lerna run watch"
   }
