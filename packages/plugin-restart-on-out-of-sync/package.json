@@ -10,6 +10,15 @@
     "pm2": "^3.5.0",
     "tslib": "^1.9.3"
   },
+  "devDependencies": {
+    "nyc": "^14.0.0",
+    "riteway": "^6.0.3",
+    "tap-nirvana": "^1.1.0",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
+    "watch": "^1.0.2"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
