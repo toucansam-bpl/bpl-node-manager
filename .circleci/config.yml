@@ -45,6 +45,7 @@ jobs:
           name: Pack CLI
           command: |
             cd packages/cli
+            npm install
             npm pack
             ls
       - run:
