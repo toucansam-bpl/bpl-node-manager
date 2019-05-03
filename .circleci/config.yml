@@ -41,26 +41,14 @@ jobs:
       - run: npm run test
 
       # install cli globally
-      - run: mkdir /home/circleci/packed-modules
       - run:
-          name: Pack cli-core
+          name: pack modules
           command: |
-            cd packages/cli-core 
-            npm install
-            npm pack
-            mv toucansam-bpl-cli-core-1.0.8-alpha.0.tgz /home/circleci/packed-modules
-      - run:
-          name: Pack CLI
-          command: |
-            cd packages/cli
-            sed -i 's/file:..\/cli-core/\/home\/circleci\/packed-modules\/toucansam-bpl-cli-core-1.0.8-alpha.0.tgz/g' package.json
-            npm install
-            npm pack
-            ls
+            node scripts/update-for-pack.js
       - run:
           name: Install CLI
           command: |
             ls
-            sudo npm install -g /home/circleci/repo/packages/cli/bpl-cli-1.0.8-alpha.0.tgz
+            sudo npm install -g /home/circleci/repo/scripts/bpl-cli-1.0.8-alpha.0.tgz
 
       - run: bpl hello
