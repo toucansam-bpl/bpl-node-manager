@@ -20,6 +20,8 @@
     "watch": "^1.0.2"
   },
   "devDependencies": {
+    "@oclif/dev-cli": "^1.22.0",
+    "@oclif/tslint": "^3.1.1",
     "nyc": "^14.0.0",
     "riteway": "^6.0.3",
     "tap-nirvana": "^1.1.0",
@@ -56,7 +58,7 @@
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "precommit": "npm run -s test && npm run -s lint && npm run -s typecheck",
-    "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
+    "prepack": "npm run -s clean && npm run -s compile && oclif-dev manifest && oclif-dev readme",
     "test": "npm run test:unit",
     "test:ci": "npm run -s test",
     "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",

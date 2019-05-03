@@ -41,8 +41,16 @@ jobs:
       - run: npm run test
 
       # install cli globally
-      - run: npm run compile
-      - run: sudo npm install -g /home/circleci/repo/packages/cli
-      - run: ls /home/circleci/repo/packages/cli/lib
-      - run: ls /home/circleci/repo/packages/cli/lib/commands
+      - run:
+          name: Pack CLI
+          command: |
+            cd packages/cli
+            npm pack
+            ls
+      - run:
+          name: Install CLI
+          command: |
+            ls
+            sudo npm install -g /home/circleci/repo/packages/cli/bpl-cli-1.0.8-alpha.0.tgz
+
       - run: bpl hello

@@ -24,7 +24,7 @@
   "scripts": {
     "clean": "rm -Rf lib",
     "compile": "tsc -b --force",
-    "prepack": "rm -rf lib && tsc -b --force",
+    "prepack": "npm run -s clean && npm run -s compile",
     "test": "npm run test:unit",
     "test:ci": "npm run -s test",
     "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",

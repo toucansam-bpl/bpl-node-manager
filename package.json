@@ -1,6 +1,14 @@
 {
   "name": "root",
   "private": true,
+  "dependencies": {
+    "@toucansam-bpl/cli-core": "file:packages/cli-core",
+    "@toucansam-bpl/plugin-monitor": "file:packages/plugin-monitor",
+    "@toucansam-bpl/plugin-node": "file:packages/plugin-node",
+    "@toucansam-bpl/plugin-restart-on-out-of-sync": "file:packages/plugin-restart-on-out-of-sync",
+    "@toucansam-bpl/plugin-snapshot": "file:packages/plugin-snapshot",
+    "bpl-cli": "file:packages/cli"
+  },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.0",
     "@oclif/plugin-help": "^2.1.6",
@@ -23,14 +31,6 @@
     "tslint": "^5.16.0",
     "typescript": "^3.4.5",
     "watch": "^1.0.2"
-  },
-  "dependencies": {
-    "@toucansam-bpl/cli-core": "file:packages/cli-core",
-    "@toucansam-bpl/plugin-monitor": "file:packages/plugin-monitor",
-    "@toucansam-bpl/plugin-node": "file:packages/plugin-node",
-    "@toucansam-bpl/plugin-restart-on-out-of-sync": "file:packages/plugin-restart-on-out-of-sync",
-    "@toucansam-bpl/plugin-snapshot": "file:packages/plugin-snapshot",
-    "bpl-cli": "file:packages/cli"
   },
   "scripts": {
     "clean": "lerna run clean",

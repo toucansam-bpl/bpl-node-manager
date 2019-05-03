@@ -29,6 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`bpl autocomplete [SHELL]`](#bpl-autocomplete-shell)
+* [`bpl hello`](#bpl-hello)
 * [`bpl help [COMMAND]`](#bpl-help-command)
 * [`bpl plugins`](#bpl-plugins)
 * [`bpl plugins:install PLUGIN...`](#bpl-pluginsinstall-plugin)
@@ -58,6 +59,13 @@ EXAMPLES
 ```
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
+
+## `bpl hello`
+
+```
+USAGE
+  $ bpl hello
+```
 
 ## `bpl help [COMMAND]`
 
