@@ -19,33 +19,30 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: install all package dependencies
-          command: |
-            cd packages/bpl-cli
-            yarn install
-            cd ../cli-core
-            yarn install
-            cd ../plugin-monitor
-            yarn install
-            cd ../plugin-node
-            yarn install
-            cd ../plugin-restart-on-out-of-sync
-            yarn install
-            cd ../snapshot
-            yarn install
-            cd ../..
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       # compile typescript
-      - run: yarn run clean
-      - run: yarn run compile
+      - run: npm run clean
+      - run: npm run compile
 
       # run tests!
-      - run: yarn run test
+      - run: npm run test
 
       # install cli globally
       - run:
           name: pack modules and run functional tests
-          command: yarn run pack-and-run-functional-tests
+          command: npm run pack-and-run-functional-tests
 
       - run: bpl hello
