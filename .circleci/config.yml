@@ -42,13 +42,7 @@ jobs:
 
       # install cli globally
       - run:
-          name: pack modules
-          command: |
-            node scripts/update-for-pack.js
-      - run:
-          name: Install CLI
-          command: |
-            ls
-            sudo npm install -g /home/circleci/repo/scripts/bpl-cli-1.0.8-alpha.0.tgz
+          name: pack modules and run functional tests
+          command: npm run pack-and-run-functional-tests
 
       - run: bpl hello

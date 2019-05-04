@@ -10,7 +10,7 @@
   "dependencies": {
     "@oclif/command": "^1.5.13",
     "@oclif/config": "^1.12.12",
-    "@toucansam-bpl/cli-core": "file:../cli-core",
+    "@toucansam-bpl/cli-core": "/Users/bmavity/crypto/bpl/node-manager/scripts/packed/toucansam-bpl-cli-core-1.0.8-alpha.0.tgz",
     "@types/execa": "^0.9.0",
     "@types/inquirer": "^6.0.1",
     "execa": "^1.0.0",
@@ -45,10 +45,14 @@
   "license": "MIT",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "topics": {
+      "snapshot:restore": {
+        "description": "brings node state to common block"
+      }
+    }
   },
   "repository": "toucansam-bpl/plugin-snapshot",
   "scripts": {

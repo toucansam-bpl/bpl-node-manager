@@ -37,6 +37,7 @@
     "compile": "lerna run compile",
     "prepack": "lerna run prepack",
     "test": "lerna run test",
+    "pack-and-functional-tests": "tsc scripts/pack-and-functional-tests.ts && node scripts/pack-and-functional-tests.js",
     "watch": "clear && lerna run watch"
   }
 }

@@ -1,9 +1,10 @@
 import * as execa from 'execa'
-import { readdirSync, readFileSync, writeFileSync } from 'fs'
+import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'fs'
 import { resolve } from 'path'
 
 interface Package {
   json: string
+  localTarballFile: string
   packageDirectoryName: string
   packageDirectoryPath: string
   packageJsonFile: string
@@ -14,6 +15,10 @@ interface Package {
 }
 
 const packagesDir = resolve(__dirname, '..', 'packages')
+const localTarballDir = resolve(__dirname, 'packed')
+
+mkdirSync(localTarballDir)
+
 const packages = readdirSync(packagesDir).reduce<Package[]>((all, packageDirectoryName) => {
   const packageDirectoryPath = resolve(packagesDir, packageDirectoryName)
   const packageJsonFile = resolve(packageDirectoryPath, 'package.json')
@@ -24,6 +29,7 @@ const packages = readdirSync(packagesDir).reduce<Package[]>((all, packageDirecto
   return all.concat([
     {
       json,
+      localTarballFile: resolve(localTarballDir, tarballName),
       packageDirectoryName,
       packageDirectoryPath,
       packageJsonFile,
@@ -37,9 +43,7 @@ const packages = readdirSync(packagesDir).reduce<Package[]>((all, packageDirecto
 
 packages.forEach(packageInfo => {
   const updatedJson = packages.reduce<string>((packageJson, p) => {
-    const localRef = `file:../${p.packageDirectoryName}`
-    const tarballLocalRef = resolve(__dirname, p.tarballName)
-    return packageJson.replace(localRef, tarballLocalRef)
+    return packageJson.replace(`file:../${p.packageDirectoryName}`, p.localTarballFile)
   }, packageInfo.json)
 
   writeFileSync(packageInfo.packageJsonFile, updatedJson)
@@ -48,5 +52,21 @@ packages.forEach(packageInfo => {
     stdio: 'inherit',
   })
   writeFileSync(packageInfo.packageJsonFile, packageInfo.json)
-  execa.shellSync(`mv ${packageInfo.tarballFile} ${resolve(__dirname, packageInfo.tarballName)}`)
+  execa.shellSync(`mv ${packageInfo.tarballFile} ${packageInfo.localTarballFile}`)
 })
+
+packages
+  .filter(p => p.packageName === 'bpl-cli')
+  .forEach(p => execa.shellSync(`npm install -g ${p.localTarballFile}`, { stdio: 'inherit' }))
+
+packages
+  .filter(p => p.packageName !== 'bpl-cli')
+  .forEach(p => {
+    execa.shellSync(`bpl plugins:install file:${p.localTarballFile}`, { stdio: 'inherit' })
+    execa.shellSync('npm run test:functional', {
+      cwd: p.packageDirectoryPath,
+      stdio: 'inherit',
+    })
+  })
+
+execa.shellSync(`rm -Rf ${localTarballDir}`)

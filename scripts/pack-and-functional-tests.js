@@ -4,6 +4,8 @@ var execa = require("execa");
 var fs_1 = require("fs");
 var path_1 = require("path");
 var packagesDir = path_1.resolve(__dirname, '..', 'packages');
+var localTarballDir = path_1.resolve(__dirname, 'packed');
+fs_1.mkdirSync(localTarballDir);
 var packages = fs_1.readdirSync(packagesDir).reduce(function (all, packageDirectoryName) {
     var packageDirectoryPath = path_1.resolve(packagesDir, packageDirectoryName);
     var packageJsonFile = path_1.resolve(packageDirectoryPath, 'package.json');
@@ -14,6 +16,7 @@ var packages = fs_1.readdirSync(packagesDir).reduce(function (all, packageDirect
     return all.concat([
         {
             json: json,
+            localTarballFile: path_1.resolve(localTarballDir, tarballName),
             packageDirectoryName: packageDirectoryName,
             packageDirectoryPath: packageDirectoryPath,
             packageJsonFile: packageJsonFile,
@@ -26,9 +29,7 @@ var packages = fs_1.readdirSync(packagesDir).reduce(function (all, packageDirect
 }, []);
 packages.forEach(function (packageInfo) {
     var updatedJson = packages.reduce(function (packageJson, p) {
-        var localRef = "file:../" + p.packageDirectoryName;
-        var tarballLocalRef = path_1.resolve(__dirname, p.tarballName);
-        return packageJson.replace(localRef, tarballLocalRef);
+        return packageJson.replace("file:../" + p.packageDirectoryName, p.localTarballFile);
     }, packageInfo.json);
     fs_1.writeFileSync(packageInfo.packageJsonFile, updatedJson);
     execa.shellSync('npm pack', {
@@ -36,5 +37,18 @@ packages.forEach(function (packageInfo) {
         stdio: 'inherit'
     });
     fs_1.writeFileSync(packageInfo.packageJsonFile, packageInfo.json);
-    execa.shellSync("mv " + packageInfo.tarballFile + " " + path_1.resolve(__dirname, packageInfo.tarballName));
+    execa.shellSync("mv " + packageInfo.tarballFile + " " + packageInfo.localTarballFile);
 });
+packages
+    .filter(function (p) { return p.packageName === 'bpl-cli'; })
+    .forEach(function (p) { return execa.shellSync("npm install -g " + p.localTarballFile, { stdio: 'inherit' }); });
+packages
+    .filter(function (p) { return p.packageName !== 'bpl-cli'; })
+    .forEach(function (p) {
+    execa.shellSync("bpl plugins:install file:" + p.localTarballFile, { stdio: 'inherit' });
+    execa.shellSync('npm run test:functional', {
+        cwd: p.packageDirectoryPath,
+        stdio: 'inherit'
+    });
+});
+// execa.shellSync(`rm -Rf ${localTarballDir}`)
