@@ -66,7 +66,7 @@ packages
   .forEach(p => execa.shellSync(`sudo npm install -g ${p.localTarballFile}`, { stdio: 'inherit' }))
 
 packages
-  .filter(p => p.packageName !== 'bpl-cli')
+  .filter(p => p.packageName.indexOf('plugin') !== -1)
   .forEach(p => {
     execa.shellSync(`bpl plugins:install file:${p.localTarballFile}`, { stdio: 'inherit' })
     execa.shellSync('npm run test:functional', {

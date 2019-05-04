@@ -48,7 +48,7 @@ packages
     .filter(function (p) { return p.packageName === 'bpl-cli'; })
     .forEach(function (p) { return execa.shellSync("sudo npm install -g " + p.localTarballFile, { stdio: 'inherit' }); });
 packages
-    .filter(function (p) { return p.packageName !== 'bpl-cli'; })
+    .filter(function (p) { return p.packageName.indexOf('plugin') !== -1; })
     .forEach(function (p) {
     execa.shellSync("bpl plugins:install file:" + p.localTarballFile, { stdio: 'inherit' });
     execa.shellSync('npm run test:functional', {
