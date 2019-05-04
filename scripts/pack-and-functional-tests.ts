@@ -63,7 +63,7 @@ packages.forEach(packageInfo => {
 
 packages
   .filter(p => p.packageName === 'bpl-cli')
-  .forEach(p => execa.shellSync(`npm install -g ${p.localTarballFile}`, { stdio: 'inherit' }))
+  .forEach(p => execa.shellSync(`sudo npm install -g ${p.localTarballFile}`, { stdio: 'inherit' }))
 
 packages
   .filter(p => p.packageName !== 'bpl-cli')
