@@ -19,7 +19,19 @@ jobs:
     steps:
       - checkout
 
-      - run: npm install
+      - run: cd packages/bpl-cli
+          npm install
+          cd ../cli-core
+          npm install
+          cd ../plugin-monitor
+          npm install
+          cd ../plugin-node
+          npm install
+          cd ../plugin-restart-on-out-of-sync
+          npm install
+          cd ../snapshot
+          npm install
+          cd ../..
 
       # compile typescript
       - run: npm run clean
