@@ -47,10 +47,16 @@ packages.forEach(packageInfo => {
   }, packageInfo.json)
 
   writeFileSync(packageInfo.packageJsonFile, updatedJson)
-  execa.shellSync('npm pack', {
-    cwd: packageInfo.packageDirectoryPath,
-    stdio: 'inherit',
-  })
+
+  try {
+    execa.shellSync('npm pack', {
+      cwd: packageInfo.packageDirectoryPath,
+      stdio: 'inherit',
+    })
+  } catch (ex) {
+    console.log('npm pack failed with error: ', ex)
+  }
+
   writeFileSync(packageInfo.packageJsonFile, packageInfo.json)
   execa.shellSync(`mv ${packageInfo.tarballFile} ${packageInfo.localTarballFile}`)
 })

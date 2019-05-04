@@ -32,10 +32,15 @@ packages.forEach(function (packageInfo) {
         return packageJson.replace("file:../" + p.packageDirectoryName, p.localTarballFile);
     }, packageInfo.json);
     fs_1.writeFileSync(packageInfo.packageJsonFile, updatedJson);
-    execa.shellSync('npm pack', {
-        cwd: packageInfo.packageDirectoryPath,
-        stdio: 'inherit'
-    });
+    try {
+        execa.shellSync('npm pack', {
+            cwd: packageInfo.packageDirectoryPath,
+            stdio: 'inherit'
+        });
+    }
+    catch (ex) {
+        console.log('npm pack failed with error: ', ex);
+    }
     fs_1.writeFileSync(packageInfo.packageJsonFile, packageInfo.json);
     execa.shellSync("mv " + packageInfo.tarballFile + " " + packageInfo.localTarballFile);
 });
@@ -51,4 +56,4 @@ packages
         stdio: 'inherit'
     });
 });
-// execa.shellSync(`rm -Rf ${localTarballDir}`)
+execa.shellSync("rm -Rf " + localTarballDir);
