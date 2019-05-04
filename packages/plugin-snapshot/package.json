@@ -10,7 +10,7 @@
   "dependencies": {
     "@oclif/command": "^1.5.13",
     "@oclif/config": "^1.12.12",
-    "@toucansam-bpl/cli-core": "file://../cli-core",
+    "@toucansam-bpl/cli-core": "file:../cli-core",
     "@types/execa": "^0.9.0",
     "@types/inquirer": "^6.0.1",
     "execa": "^1.0.0",

@@ -21,31 +21,18 @@ jobs:
 
       - run:
           name: install all package dependencies
-          command: |
-            cd packages/bpl-cli
-            npm install
-            cd ../cli-core
-            npm install
-            cd ../plugin-monitor
-            npm install
-            cd ../plugin-node
-            npm install
-            cd ../plugin-restart-on-out-of-sync
-            npm install
-            cd ../snapshot
-            npm install
-            cd ../..
+          command: yarn
 
       # compile typescript
-      - run: npm run clean
-      - run: npm run compile
+      - run: yarn run clean
+      - run: yarn run compile
 
       # run tests!
-      - run: npm run test
+      - run: yarn run test
 
       # install cli globally
       - run:
           name: pack modules and run functional tests
-          command: npm run pack-and-run-functional-tests
+          command: yarn run pack-and-run-functional-tests
 
       - run: bpl hello
