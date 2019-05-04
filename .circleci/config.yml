@@ -21,7 +21,20 @@ jobs:
 
       - run:
           name: install all package dependencies
-          command: yarn
+          command: |
+            cd packages/bpl-cli
+            yarn
+            cd ../cli-core
+            yarn
+            cd ../plugin-monitor
+            yarn
+            cd ../plugin-node
+            yarn
+            cd ../plugin-restart-on-out-of-sync
+            yarn
+            cd ../snapshot
+            yarn
+            cd ../..
 
       # compile typescript
       - run: yarn run clean
