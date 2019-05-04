@@ -23,17 +23,17 @@ jobs:
           name: install all package dependencies
           command: |
             cd packages/bpl-cli
-            yarn
+            yarn install
             cd ../cli-core
-            yarn
+            yarn install
             cd ../plugin-monitor
-            yarn
+            yarn install
             cd ../plugin-node
-            yarn
+            yarn install
             cd ../plugin-restart-on-out-of-sync
-            yarn
+            yarn install
             cd ../snapshot
-            yarn
+            yarn install
             cd ../..
 
       # compile typescript
