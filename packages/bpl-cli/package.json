@@ -53,7 +53,7 @@
   "scripts": {
     "clean": "rm -Rf lib",
     "compile": "tsc -b --force",
-    "postinstall": "node lib/init.js",
+    "postinstall": "(test -f ./lib/init.js && node ./lib/init.js) || true",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "prepack": "npm run -s clean && npm run -s compile && oclif-dev manifest && oclif-dev readme",
