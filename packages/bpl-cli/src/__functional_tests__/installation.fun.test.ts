@@ -1,7 +1,7 @@
 /* tslint:disable:no-floating-promises */
+import { configDir, configFile } from '@toucansam-bpl/cli-core/lib/config'
 import { existsSync } from 'fs'
 import { describe } from 'riteway'
-import { configDir, configFile } from '@toucansam-bpl/cli-core/lib/config'
 
 describe('bpl cli', async assert => {
   assert({
