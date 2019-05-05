@@ -58,7 +58,7 @@
     "posttest": "tslint -p . -t stylish",
     "prepack": "npm run -s clean && npm run -s compile && oclif-dev manifest && oclif-dev readme",
     "test": "echo \"cli does not have tests yet\"",
-    "test:functional": "echo \"cli does not have functional tests yet\"",
+    "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts"
