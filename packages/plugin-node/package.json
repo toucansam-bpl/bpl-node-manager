@@ -70,7 +70,7 @@
     "posttest": "tslint -p . -t stylish",
     "prepack": "npm run -s clean && npm run -s compile && oclif-dev manifest && oclif-dev readme",
     "test": "echo \"plugin-node does not have tests yet\"",
-    "test:functional": "echo \"cli does not have functional tests yet\"",
+    "test:functional": "echo \"plugin-node does not have functional tests yet\"",
     "version": "oclif-dev readme && git add README.md"
   }
 }
