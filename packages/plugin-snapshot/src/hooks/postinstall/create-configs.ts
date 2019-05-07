@@ -1,5 +1,3 @@
-import { connect, disconnect, restart } from 'pm2'
-
-export default async function hook({ plugin }) {
-  console.log('installing config', plugin)
+export default async function hook() {
+  console.log('installing config', arguments)
 }
