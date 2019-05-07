@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "dependencies": {
+    "@oclif/plugin-plugins": "git+https://git@github.com/toucansam-bpl/plugin-plugins.git",
     "@toucansam-bpl/cli-core": "file:packages/cli-core",
     "@toucansam-bpl/plugin-monitor": "file:packages/plugin-monitor",
     "@toucansam-bpl/plugin-node": "file:packages/plugin-node",

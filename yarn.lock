@@ -775,9 +775,9 @@
     fast-levenshtein "^2.0.6"
     lodash "^4.17.11"
 
-"@oclif/plugin-plugins@^1.7.8":
+"@oclif/plugin-plugins@git+https://git@github.com/toucansam-bpl/plugin-plugins.git":
   version "1.7.8"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.7.8.tgz#51e07cb85bf9cd36a6de8f3e441b7d705a5e7105"
+  resolved "git+https://git@github.com/toucansam-bpl/plugin-plugins.git#f09bb3b2ee9d4c57fb0b724a7a0cf9a190487c6f"
   dependencies:
     "@oclif/color" "^0.0.0"
     "@oclif/command" "^1.5.12"
@@ -1367,7 +1367,7 @@ boolbase@~1.0.0:
     "@oclif/plugin-autocomplete" "^0.1.0"
     "@oclif/plugin-help" "^2.1.6"
     "@oclif/plugin-not-found" "^1.2.2"
-    "@oclif/plugin-plugins" "^1.7.8"
+    "@oclif/plugin-plugins" "git+https://git@github.com/toucansam-bpl/plugin-plugins.git"
     "@toucansam-bpl/cli-core" "file:../cli-core"
     tslib "^1.9.3"
 
