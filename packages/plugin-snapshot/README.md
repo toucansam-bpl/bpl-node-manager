@@ -16,25 +16,25 @@ Manages snapshots for BPL nodes
 <!-- usage -->
 ```sh-session
 $ npm install -g @toucansam-bpl/plugin-snapshot
-$ oclif-example COMMAND
+$ @toucansam-bpl/plugin-snapshot COMMAND
 running command...
-$ oclif-example (-v|--version|version)
+$ @toucansam-bpl/plugin-snapshot (-v|--version|version)
 @toucansam-bpl/plugin-snapshot/1.0.9-alpha.0 darwin-x64 node-v11.13.0
-$ oclif-example --help [COMMAND]
+$ @toucansam-bpl/plugin-snapshot --help [COMMAND]
 USAGE
-  $ oclif-example COMMAND
+  $ @toucansam-bpl/plugin-snapshot COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example snapshot:restore`](#oclif-example-snapshotrestore)
+* [`@toucansam-bpl/plugin-snapshot snapshot:restore`](#toucansam-bplplugin-snapshot-snapshotrestore)
 
-## `oclif-example snapshot:restore`
+## `@toucansam-bpl/plugin-snapshot snapshot:restore`
 
 ```
 USAGE
-  $ oclif-example snapshot:restore
+  $ @toucansam-bpl/plugin-snapshot snapshot:restore
 ```
 
 _See code: [src/commands/snapshot/restore.ts](https://github.com/toucansam-bpl/plugin-snapshot/blob/v1.0.9-alpha.0/src/commands/snapshot/restore.ts)_
