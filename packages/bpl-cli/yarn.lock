@@ -231,23 +231,6 @@
     fast-levenshtein "^2.0.6"
     lodash "^4.17.11"
 
-"@oclif/plugin-plugins@git+https://git@github.com/toucansam-bpl/plugin-plugins.git":
-  version "1.7.8"
-  resolved "git+https://git@github.com/toucansam-bpl/plugin-plugins.git#f09bb3b2ee9d4c57fb0b724a7a0cf9a190487c6f"
-  dependencies:
-    "@oclif/color" "^0.0.0"
-    "@oclif/command" "^1.5.12"
-    chalk "^2.4.2"
-    cli-ux "^5.2.1"
-    debug "^4.1.0"
-    fs-extra "^7.0.1"
-    http-call "^5.2.2"
-    load-json-file "^5.2.0"
-    npm-run-path "^3.0.0"
-    semver "^5.6.0"
-    tslib "^1.9.3"
-    yarn "^1.15.0"
-
 "@oclif/screen@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
@@ -266,6 +249,24 @@
   dependencies:
     tslib "^1.9.3"
     typescript "^3.4.5"
+
+"@toucansam-bpl/plugin-plugins@^1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@toucansam-bpl/plugin-plugins/-/plugin-plugins-1.7.8.tgz#c14f64a1297fb6ab6df9afb933156968e9682927"
+  integrity sha512-tdRSjUt6oaJA+HAaSzcnwEFIkfYFazpTpgNXhQUcjNYzN6VG386gkPsQEDViezRxuBIZ44gF4pNmsAqSUzw38w==
+  dependencies:
+    "@oclif/color" "^0.0.0"
+    "@oclif/command" "^1.5.12"
+    chalk "^2.4.2"
+    cli-ux "^5.2.1"
+    debug "^4.1.0"
+    fs-extra "^7.0.1"
+    http-call "^5.2.2"
+    load-json-file "^5.2.0"
+    npm-run-path "^3.0.0"
+    semver "^5.6.0"
+    tslib "^1.9.3"
+    yarn "^1.15.0"
 
 "@types/fs-extra@^5.0.2":
   version "5.1.0"

@@ -45,6 +45,9 @@
   "license": "MIT",
   "oclif": {
     "commands": "./lib/commands",
+    "hooks": {
+      "plugins:postinstall": "./lib/hooks/postinstall/create-configs"
+    },
     "devPlugins": [
       "@oclif/plugin-help"
     ],

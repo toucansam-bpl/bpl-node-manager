@@ -99,7 +99,7 @@ EXAMPLE
   $ bpl plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/index.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/index.ts)_
 
 ## `bpl plugins:install PLUGIN...`
 
@@ -135,7 +135,7 @@ EXAMPLES
   $ bpl plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/install.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/install.ts)_
 
 ## `bpl plugins:link PLUGIN`
 
@@ -162,7 +162,7 @@ EXAMPLE
   $ bpl plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/link.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/link.ts)_
 
 ## `bpl plugins:uninstall PLUGIN...`
 
@@ -184,7 +184,7 @@ ALIASES
   $ bpl plugins:remove
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/uninstall.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/uninstall.ts)_
 
 ## `bpl plugins:update`
 
@@ -199,5 +199,5 @@ OPTIONS
   -v, --verbose
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
