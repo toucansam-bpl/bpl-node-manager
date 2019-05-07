@@ -46,7 +46,7 @@
   "oclif": {
     "commands": "./lib/commands",
     "hooks": {
-      "plugins:postinstall": "./lib/hooks/postinstall/create-configs"
+      "plugins:postinstall": "./lib/hooks/postinstall/create-config-items"
     },
     "devPlugins": [
       "@oclif/plugin-help"

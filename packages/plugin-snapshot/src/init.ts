@@ -4,11 +4,13 @@ import { resolve } from 'path'
 
 const snapshotDir = resolve(config.configDir, 'snapshots')
 
-if (!existsSync(snapshotDir)) {
-  mkdirSync(snapshotDir)
-}
+export default function createConfigItems() {
+  if (!existsSync(snapshotDir)) {
+    mkdirSync(snapshotDir)
+  }
 
-config.ensureSection({
-  name: 'plugin-snapshot',
-  snapshotDir,
-})
+  config.ensureSection({
+    name: 'plugin-snapshot',
+    snapshotDir,
+  })
+}
