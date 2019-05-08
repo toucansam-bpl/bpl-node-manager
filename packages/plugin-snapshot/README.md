@@ -19,7 +19,7 @@ $ npm install -g @toucansam-bpl/plugin-snapshot
 $ @toucansam-bpl/plugin-snapshot COMMAND
 running command...
 $ @toucansam-bpl/plugin-snapshot (-v|--version|version)
-@toucansam-bpl/plugin-snapshot/1.0.9-alpha.0 darwin-x64 node-v11.13.0
+@toucansam-bpl/plugin-snapshot/1.0.10-alpha.0 darwin-x64 node-v11.13.0
 $ @toucansam-bpl/plugin-snapshot --help [COMMAND]
 USAGE
   $ @toucansam-bpl/plugin-snapshot COMMAND
@@ -37,5 +37,5 @@ USAGE
   $ @toucansam-bpl/plugin-snapshot snapshot:restore
 ```
 
-_See code: [src/commands/snapshot/restore.ts](https://github.com/toucansam-bpl/plugin-snapshot/blob/v1.0.9-alpha.0/src/commands/snapshot/restore.ts)_
+_See code: [src/commands/snapshot/restore.ts](https://github.com/toucansam-bpl/plugin-snapshot/blob/v1.0.10-alpha.0/src/commands/snapshot/restore.ts)_
 <!-- commandsstop -->

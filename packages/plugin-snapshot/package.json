@@ -1,7 +1,7 @@
 {
   "name": "@toucansam-bpl/plugin-snapshot",
   "description": "Manages snapshots for BPL nodes",
-  "version": "1.0.9-alpha.0",
+  "version": "1.0.10-alpha.0",
   "publishConfig": {
     "access": "public"
   },
