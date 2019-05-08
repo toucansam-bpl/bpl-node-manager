@@ -1,7 +1,7 @@
 {
   "name": "@toucansam-bpl/plugin-snapshot",
   "description": "Manages snapshots for BPL nodes",
-  "version": "1.0.9-alpha.0",
+  "version": "1.0.10-alpha.0",
   "publishConfig": {
     "access": "public"
   },
@@ -10,9 +10,10 @@
   "dependencies": {
     "@oclif/command": "^1.5.13",
     "@oclif/config": "^1.12.12",
-    "@toucansam-bpl/cli-core": "^1.0.8-alpha.0",
+    "@toucansam-bpl/cli-core": "file:../cli-core",
     "@types/execa": "^0.9.0",
-    "@types/inquirer": "^6.0.0",
+    "@types/inquirer": "^6.0.1",
+    "execa": "^1.0.0",
     "inquirer": "^6.3.1",
     "ramda": "^0.26.1",
     "tslib": "^1.9.3",
@@ -20,24 +21,13 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.0",
-    "@oclif/plugin-help": "^2.1.6",
     "@oclif/tslint": "^3.1.1",
-    "@types/node": "^10.14.4",
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.2.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "globby": "^8.0.2",
     "nyc": "^14.0.0",
-    "prettier": "^1.17.0",
     "riteway": "^6.0.3",
     "tap-nirvana": "^1.1.0",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
-    "typescript": "^3.4.3"
+    "typescript": "^3.4.5"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -55,28 +45,34 @@
   "license": "MIT",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "oclif-example",
+    "hooks": {
+      "plugins:postinstall": "./lib/hooks/postinstall/create-config-items"
+    },
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "topics": {
+      "snapshot:restore": {
+        "description": "brings node state to common block"
+      }
+    }
   },
   "repository": "toucansam-bpl/plugin-snapshot",
   "scripts": {
     "clean": "rm -Rf lib",
     "compile": "tsc -b --force",
     "lint": "eslint src && echo 'Lint complete.'",
-    "postinstall": "node lib/init.js",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "precommit": "npm run -s test && npm run -s lint && npm run -s typecheck",
-    "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
+    "prepack": "npm run -s clean && npm run -s compile && oclif-dev manifest && oclif-dev readme",
     "test": "npm run test:unit",
-    "test:ci": "npm run -s test && npm run -s test:functional",
-    "test:functional": "npm run ts && nyc riteway lib/**/*-fun.test.js | tap-nirvana",
+    "test:ci": "npm run -s test",
+    "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
     "test:unit": "npm run ts && nyc riteway lib/**/*-rt.test.js | tap-nirvana",
     "ts": "npm run clean && npm run -s compile",
     "typecheck": "npx -p typescript tsc --rootDir . src/test.js --allowJs --checkJs --noEmit --lib es6 --jsx react && echo 'TypeScript check complete.'",
     "version": "oclif-dev readme && git add README.md",
-    "watch": "watch 'clear && npm run -s test | tap-nirvana && npm run -s lint && npm run -s typecheck' source"
+    "watch": "watch 'npm run -s test | tap-nirvana && npm run -s lint && npm run -s typecheck' src"
   }
 }

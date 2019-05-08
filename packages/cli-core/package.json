@@ -1,25 +1,36 @@
 {
   "name": "@toucansam-bpl/cli-core",
-  "version": "1.0.8-alpha.0",
+  "version": "1.0.10-alpha.0",
   "description": "Core functionality for BPL Node Manager",
   "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prepack": "rm -rf lib && tsc -b --force",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "toucansam",
   "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^11.13.4",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.15.0",
-    "typescript": "^3.4.3"
-  },
   "dependencies": {
-    "tslib": "^1.9.3"
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.5"
   },
-  "gitHead": "8095a90da0341dab65e367910e732b120a67fffa"
+  "devDependencies": {
+    "nyc": "^14.0.0",
+    "riteway": "^6.0.3",
+    "tap-nirvana": "^1.1.0",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "clean": "rm -Rf lib",
+    "compile": "tsc -b --force",
+    "prepack": "npm run -s clean && npm run -s compile",
+    "test": "npm run test:unit",
+    "test:ci": "npm run -s test",
+    "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
+    "test:integration": "nyc riteway lib/**/*-int.test.js | tap-nirvana",
+    "test:unit": "npm run ts && nyc riteway lib/**/*-rt.test.js | tap-nirvana",
+    "ts": "npm run clean && npm run -s compile",
+    "watch": "watch 'npm run -s test | tap-nirvana' src"
+  }
 }

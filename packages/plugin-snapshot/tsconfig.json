@@ -9,7 +9,6 @@
     "target": "es2017",
     "composite": true
   },
-  "include": [
-    "src/**/*"
-  ]
+  "exclude": ["src/**/*.test.js"],
+  "include": ["src/**/*"]
 }

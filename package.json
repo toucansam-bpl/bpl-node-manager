@@ -1,10 +1,44 @@
 {
   "name": "root",
   "private": true,
-  "devDependencies": {
-    "lerna": "^3.13.2"
-  },
   "dependencies": {
-    "oclif": "^1.13.1"
+    "@oclif/plugin-plugins": "git+https://git@github.com/toucansam-bpl/plugin-plugins.git",
+    "@toucansam-bpl/cli-core": "file:packages/cli-core",
+    "@toucansam-bpl/plugin-monitor": "file:packages/plugin-monitor",
+    "@toucansam-bpl/plugin-node": "file:packages/plugin-node",
+    "@toucansam-bpl/plugin-restart-on-out-of-sync": "file:packages/plugin-restart-on-out-of-sync",
+    "@toucansam-bpl/plugin-snapshot": "file:packages/plugin-snapshot",
+    "bpl-cli": "file:packages/bpl-cli"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.0",
+    "@oclif/plugin-help": "^2.1.6",
+    "@oclif/tslint": "^3.1.1",
+    "@types/node": "^11.13.4",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "globby": "^9.2.0",
+    "lerna": "^3.13.2",
+    "nyc": "^14.0.0",
+    "prettier": "^1.17.0",
+    "riteway": "^6.0.3",
+    "tap-nirvana": "^1.1.0",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "clean": "lerna run clean",
+    "compile": "lerna run compile",
+    "prepack": "lerna run prepack",
+    "test": "lerna run test",
+    "pack-and-run-functional-tests": "tsc scripts/pack-and-functional-tests.ts && node scripts/pack-and-functional-tests.js",
+    "watch": "clear && lerna run watch"
   }
 }

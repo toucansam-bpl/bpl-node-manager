@@ -1,0 +1,11 @@
+{
+  "extends": "@oclif/tslint",
+
+  "rules": {
+    "no-consecutive-blank-lines": ["true", 2],
+    "no-console": false,
+    "no-http-string": false,
+    "object-curly-spacing": ["true", "always"],
+    "quotemark": [true, "single", "backtick", "avoid-escape"]
+  }
+}

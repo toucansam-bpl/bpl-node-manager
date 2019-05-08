@@ -19,7 +19,7 @@ $ npm install -g @toucansam-bpl/plugin-restart-on-out-of-sync
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@toucansam-bpl/plugin-restart-on-out-of-sync/1.0.5-alpha.0 darwin-x64 node-v11.13.0
+@toucansam-bpl/plugin-restart-on-out-of-sync/1.0.10-alpha.0 darwin-x64 node-v11.13.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND

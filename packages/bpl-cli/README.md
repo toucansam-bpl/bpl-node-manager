@@ -19,7 +19,7 @@ $ npm install -g bpl-cli
 $ bpl COMMAND
 running command...
 $ bpl (-v|--version|version)
-bpl-cli/1.0.8-alpha.0 darwin-x64 node-v11.13.0
+bpl-cli/1.0.10-alpha.0 darwin-x64 node-v11.13.0
 $ bpl --help [COMMAND]
 USAGE
   $ bpl COMMAND
@@ -29,6 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`bpl autocomplete [SHELL]`](#bpl-autocomplete-shell)
+* [`bpl hello`](#bpl-hello)
 * [`bpl help [COMMAND]`](#bpl-help-command)
 * [`bpl plugins`](#bpl-plugins)
 * [`bpl plugins:install PLUGIN...`](#bpl-pluginsinstall-plugin)
@@ -58,6 +59,13 @@ EXAMPLES
 ```
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
+
+## `bpl hello`
+
+```
+USAGE
+  $ bpl hello
+```
 
 ## `bpl help [COMMAND]`
 
@@ -91,7 +99,7 @@ EXAMPLE
   $ bpl plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/index.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/index.ts)_
 
 ## `bpl plugins:install PLUGIN...`
 
@@ -127,7 +135,7 @@ EXAMPLES
   $ bpl plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/install.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/install.ts)_
 
 ## `bpl plugins:link PLUGIN`
 
@@ -154,7 +162,7 @@ EXAMPLE
   $ bpl plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/link.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/link.ts)_
 
 ## `bpl plugins:uninstall PLUGIN...`
 
@@ -176,7 +184,7 @@ ALIASES
   $ bpl plugins:remove
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/uninstall.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/uninstall.ts)_
 
 ## `bpl plugins:update`
 
@@ -191,5 +199,5 @@ OPTIONS
   -v, --verbose
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
+_See code: [@toucansam-bpl/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
 <!-- commandsstop -->

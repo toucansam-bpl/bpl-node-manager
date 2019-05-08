@@ -1,5 +1,4 @@
-import { connect, disconnect, restart, } from 'pm2'
-
+import { connect, disconnect, restart } from 'pm2'
 
 export default async function hook() {
   console.log('Restarting BPL Node')

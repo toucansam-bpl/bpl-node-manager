@@ -1,7 +1,7 @@
 {
   "name": "bpl-cli",
   "description": "Pluggable Blockpool Node Manager",
-  "version": "1.0.8-alpha.0",
+  "version": "1.0.10-alpha.0",
   "author": "toucansam",
   "bin": {
     "bpl": "./bin/run"
@@ -12,18 +12,20 @@
     "@oclif/plugin-autocomplete": "^0.1.0",
     "@oclif/plugin-help": "^2.1.6",
     "@oclif/plugin-not-found": "^1.2.2",
-    "@oclif/plugin-plugins": "^1.7.8",
-    "@toucansam-bpl/cli-core": "^1.0.8-alpha.0",
+    "@toucansam-bpl/cli-core": "file:../cli-core",
+    "@toucansam-bpl/plugin-plugins": "^1.7.8",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.0",
     "@oclif/tslint": "^3.1.1",
-    "@types/node": "^10.14.4",
-    "globby": "^8.0.2",
+    "nyc": "^14.1.0",
+    "riteway": "^6.0.3",
+    "tap-nirvana": "^1.1.0",
     "ts-node": "^8.1.0",
-    "tslint": "^5.15.0",
-    "typescript": "^3.4.3"
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
+    "watch": "^1.0.2"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -45,17 +47,19 @@
       "@oclif/plugin-autocomplete",
       "@oclif/plugin-help",
       "@oclif/plugin-not-found",
-      "@oclif/plugin-plugins"
+      "@toucansam-bpl/plugin-plugins"
     ]
   },
   "scripts": {
-    "postinstall": "node ./lib/init.js",
+    "clean": "rm -Rf lib",
+    "compile": "tsc -b --force",
+    "postinstall": "(test -f ./lib/init.js && node ./lib/init.js) || true",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
-    "prepack": "rm -rf lib && tsc -b --force && oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
+    "prepack": "npm run -s clean && npm run -s compile && oclif-dev manifest && oclif-dev readme",
+    "test": "echo \"cli does not have tests yet\"",
+    "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts",
-  "gitHead": "8095a90da0341dab65e367910e732b120a67fffa"
+  "types": "lib/index.d.ts"
 }

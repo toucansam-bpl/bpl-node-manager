@@ -6,30 +6,29 @@ import fetch from 'node-fetch'
 // {"success":true,"syncing":false,"blocks":-20,"height":2831396,"id":"9154458450546454046"}
 
 interface NodeSyncStatus {
-  syncing: boolean,
-  height: number,
+  syncing: boolean
+  height: number
 }
 
-async function getNodeSyncStatus(server: string) : Promise<NodeSyncStatus> {
+async function getNodeSyncStatus(server: string): Promise<NodeSyncStatus> {
   return new Promise(async (resolve, reject) => {
     try {
       console.log(`Fetching sync status for ${server}`)
       const raw = await fetch(`${server}/api/loader/status/sync`)
       const response = await raw.json()
       resolve(response)
-    }
-    catch (ex) {
+    } catch (ex) {
       reject(ex)
     }
   })
 }
 
 interface NodeStatus {
-  syncing: boolean,
-  outOfSync: boolean,
+  syncing: boolean
+  outOfSync: boolean
 }
 
-async function getNodeStatus() : Promise<NodeStatus> {
+async function getNodeStatus(): Promise<NodeStatus> {
   return new Promise(async (resolve, reject) => {
     let nodeHeight
     try {
@@ -43,8 +42,7 @@ async function getNodeStatus() : Promise<NodeStatus> {
       }
 
       nodeHeight = nodeStatus.height
-    }
-    catch (ex) {
+    } catch (ex) {
       if (ex.code === 'ECONNREFUSED') {
         // TODO: Warn that node is not running and suggest solution
         return reject(ex)
@@ -63,8 +61,7 @@ async function getNodeStatus() : Promise<NodeStatus> {
         // 40 blocks is at least a 10 minute time differential
         outOfSync: heightDiff > 40,
       })
-    }
-    catch (ex) {
+    } catch (ex) {
       reject(ex)
     }
   })
@@ -80,9 +77,8 @@ export class MonitorRunCommand extends Command {
         console.log('Node out of sync. Running hook.')
         await this.config.runHook('node-out-of-sync', {})
       }
-    }
-    catch (ex) {
-    /*
+    } catch (ex) {
+      /*
       if (ex.code) {
         await this.config.runHook('node-out-of-sync', { id: 'out of sync' })
       }
