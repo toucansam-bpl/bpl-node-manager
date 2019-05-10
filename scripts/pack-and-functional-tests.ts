@@ -3,6 +3,7 @@ import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'fs'
 import { resolve } from 'path'
 
 import { configDir } from '../packages/cli-core/lib/config'
+import { exec } from 'child_process'
 
 interface Package {
   json: string
@@ -74,6 +75,8 @@ packages
       stdio: 'inherit',
     })
   })
+
+execa.shellSync('node ./runSnapshotInit.js', { stdio: 'inherit' })
 
 packages
   .filter(p => p.packageName.indexOf('plugin') !== -1)

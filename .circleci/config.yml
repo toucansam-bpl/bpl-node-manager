@@ -42,7 +42,6 @@ jobs:
       - run: npm run test
 
       # install cli globally
-      - run: node scripts/runSnapshotInit.js
       - run:
           name: pack modules and run functional tests
           command: npm run pack-and-run-functional-tests
