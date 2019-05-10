@@ -76,7 +76,7 @@ packages
     })
   })
 
-execa.shellSync('node ./runSnapshotInit.js', { stdio: 'inherit' })
+execa.shellSync(`node ${__dirname}/runSnapshotInit.js`, { stdio: 'inherit' })
 
 packages
   .filter(p => p.packageName.indexOf('plugin') !== -1)
