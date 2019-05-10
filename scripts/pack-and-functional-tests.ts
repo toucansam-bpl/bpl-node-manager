@@ -79,6 +79,9 @@ packages
       cwd: p.packageDirectoryPath,
       stdio: 'inherit',
     })
+    execa.shellSync(`bpl plugins:uninstall ${p.packageDirectoryName.replace('plugin-', '')}`, {
+      stdio: 'inherit',
+    })
   })
 
 execa.shellSync(`rm -Rf ${localTarballDir}`)
