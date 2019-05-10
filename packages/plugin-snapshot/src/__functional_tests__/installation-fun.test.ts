@@ -2,8 +2,8 @@
 import { existsSync } from 'fs'
 import { describe } from 'riteway'
 
-import { defaultSnapshotDir } from '../init'
 import { readSnapshotDir } from '../config/snapshot-dir'
+import { defaultSnapshotDir } from '../init'
 
 describe('bpl snapshot plugin', async assert => {
   assert({
