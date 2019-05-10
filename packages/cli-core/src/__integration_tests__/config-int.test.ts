@@ -1,12 +1,13 @@
 /* tslint:disable:no-floating-promises */
-import { existsSync } from 'fs'
+import { existsSync, promises } from 'fs'
 import { describe } from 'riteway'
 
-import { configDir, configFile } from '../config'
-// import { rmdir, unlink } from '../util/fs-promise'
+import { configDir, configFile, create } from '../config'
+
+const { rmdir, unlink } = promises
 
 describe('config', async assert => {
-  // await create()
+  await create()
 
   assert({
     given: 'after creating new config',
@@ -22,6 +23,6 @@ describe('config', async assert => {
     expected: true,
   })
 
-  // await unlink(configFile)
-  // await rmdir(configDir)
+  await unlink(configFile)
+  await rmdir(configDir)
 })
