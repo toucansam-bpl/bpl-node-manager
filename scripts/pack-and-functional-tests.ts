@@ -75,12 +75,12 @@ packages
   .filter(p => p.packageName.indexOf('plugin') !== -1)
   .forEach(p => {
     execa.shellSync(`bpl plugins:install file:${p.localTarballFile}`, { stdio: 'inherit' })
-    execa.shellSync('ls /home/circleci/.blockpool')
+    execa.shellSync('ls /home/circleci/.blockpool', { stdio: 'inherit' })
     execa.shellSync('npm run test:functional', {
       cwd: p.packageDirectoryPath,
       stdio: 'inherit',
     })
-    execa.shellSync('ls /home/circleci/.blockpool')
+    execa.shellSync('ls /home/circleci/.blockpool', { stdio: 'inherit' })
     execa.shellSync(`bpl plugins:uninstall ${p.packageDirectoryName.replace('plugin-', '')}`, {
       stdio: 'inherit',
     })
