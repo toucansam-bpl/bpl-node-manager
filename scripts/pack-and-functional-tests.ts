@@ -78,7 +78,7 @@ packages
 packages
   .filter(p => p.packageName.indexOf('plugin') !== -1)
   .forEach(p => {
-    execa.shellSync(`bpl plugins:install file:${p.localTarballFile}`, { stdio: 'inherit' })
+    execa.shellSync(`env DEBUG=\* bpl plugins:install file:${p.localTarballFile}`, { stdio: 'inherit' })
     execa.shellSync(`ls ${configDir}`, { stdio: 'inherit' })
     execa.shellSync('npm run test:functional', {
       cwd: p.packageDirectoryPath,

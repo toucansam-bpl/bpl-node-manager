@@ -58,7 +58,7 @@ packages
 packages
     .filter(function (p) { return p.packageName.indexOf('plugin') !== -1; })
     .forEach(function (p) {
-    execa.shellSync("bpl plugins:install file:" + p.localTarballFile, { stdio: 'inherit' });
+    execa.shellSync("env DEBUG=* bpl plugins:install file:" + p.localTarballFile, { stdio: 'inherit' });
     execa.shellSync("ls " + config_1.configDir, { stdio: 'inherit' });
     execa.shellSync('npm run test:functional', {
         cwd: p.packageDirectoryPath,
