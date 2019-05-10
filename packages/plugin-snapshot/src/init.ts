@@ -2,15 +2,17 @@ import { config } from '@toucansam-bpl/cli-core'
 import { existsSync, mkdirSync } from 'fs'
 import { resolve } from 'path'
 
-export const snapshotDir = resolve(config.configDir, 'snapshots')
+import { snapshotSectionKey } from './config/view-snapshot-section'
+
+export const defaultSnapshotDir = resolve(config.configDir, 'snapshots')
 
 export const createConfigItems = () => {
-  if (!existsSync(snapshotDir)) {
-    mkdirSync(snapshotDir)
+  if (!existsSync(defaultSnapshotDir)) {
+    mkdirSync(defaultSnapshotDir)
   }
 
   config.ensureSection({
-    name: 'plugin-snapshot',
-    snapshotDir,
+    name: snapshotSectionKey,
+    snapshotDir: defaultSnapshotDir,
   })
 }

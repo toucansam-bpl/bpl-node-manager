@@ -9,6 +9,8 @@
   "author": "toucansam",
   "license": "MIT",
   "dependencies": {
+    "@types/ramda": "^0.26.8",
+    "ramda": "^0.26.1",
     "tslib": "^1.9.3",
     "typescript": "^3.4.5"
   },
