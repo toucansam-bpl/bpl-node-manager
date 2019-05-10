@@ -1,7 +1,7 @@
 /* tslint:disable:no-floating-promises */
 import { describe } from 'riteway'
 
-import { viewSnapshotDir } from '../properties'
+import { viewSnapshotDir } from '../snapshot-dir'
 
 describe('properties', async assert => {
   assert({

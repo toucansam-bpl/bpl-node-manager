@@ -1,7 +1,7 @@
 /* tslint:disable:no-floating-promises */
 import { describe } from 'riteway'
 
-import { snapshotSectionKey, viewSnapshotSection } from '../view-snapshot-section'
+import { snapshotSectionKey, viewSnapshotSection } from '../snapshot-section'
 
 const addPlugin = (plugins: any) => ({
   ...plugins,

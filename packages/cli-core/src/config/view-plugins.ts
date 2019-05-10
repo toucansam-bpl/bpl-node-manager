@@ -5,9 +5,7 @@ import { readConfigJson } from './config-file'
 export const pluginsKey = 'plugins'
 export const viewPlugins = view(lensProp(pluginsKey))
 
-export const readPlugins = () => {
-  return pipe(
-    readConfigJson,
-    viewPlugins,
-  )
-}
+export const readPlugins = pipe(
+  readConfigJson,
+  viewPlugins,
+)
