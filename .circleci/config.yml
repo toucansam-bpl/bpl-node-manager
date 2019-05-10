@@ -45,5 +45,3 @@ jobs:
       - run:
           name: pack modules and run functional tests
           command: npm run pack-and-run-functional-tests
-
-      - run: bpl hello
