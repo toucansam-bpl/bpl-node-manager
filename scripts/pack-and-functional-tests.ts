@@ -61,6 +61,8 @@ packages.forEach(packageInfo => {
   execa.shellSync(`mv ${packageInfo.tarballFile} ${packageInfo.localTarballFile}`)
 })
 
+process.env.OCLIF_DEBUG = '1'
+
 packages
   .filter(p => p.packageName === 'bpl-cli')
   .forEach(p => {
@@ -87,3 +89,4 @@ packages
   })
 
 execa.shellSync(`rm -Rf ${localTarballDir}`)
+process.env.OCLIF_DEBUG = '0'
