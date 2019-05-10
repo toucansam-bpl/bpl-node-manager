@@ -27,7 +27,7 @@
     "clean": "rm -Rf lib",
     "compile": "tsc -b --force",
     "prepack": "npm run -s clean && npm run -s compile",
-    "test": "npm run test:unit",
+    "test": "npm run test:unit && npm run test:integration",
     "test:ci": "npm run -s test",
     "test:functional": "nyc riteway lib/**/*-fun.test.js | tap-nirvana",
     "test:integration": "nyc riteway lib/**/*-int.test.js | tap-nirvana",

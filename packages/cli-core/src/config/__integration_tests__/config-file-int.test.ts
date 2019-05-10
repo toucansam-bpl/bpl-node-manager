@@ -2,12 +2,13 @@
 import { promises } from 'fs'
 import { describe } from 'riteway'
 
-import { configFile } from '../../config'
+import { configDir, configFile } from '../../config'
 import { readConfigFile } from '../config-file'
 
-const { unlink, writeFile } = promises
+const { mkdir, rmdir, unlink, writeFile } = promises
 
 describe('config-file', async assert => {
+  await mkdir(configDir)
   await writeFile(configFile, 'test contents 1')
 
   assert({
@@ -29,4 +30,5 @@ describe('config-file', async assert => {
   })
 
   await unlink(configFile)
+  await rmdir(configDir)
 })
