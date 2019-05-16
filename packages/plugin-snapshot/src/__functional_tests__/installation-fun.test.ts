@@ -3,7 +3,8 @@ import { existsSync } from 'fs'
 import { describe } from 'riteway'
 
 import { readSnapshotDir } from '../config/snapshot-dir'
-import { defaultSnapshotDir } from '../init'
+import { readSnapshotServers } from '../config/snapshot-servers'
+import { defaultSnapshotDir, defaultSnapshotServers } from '../init'
 
 describe('bpl snapshot plugin', async assert => {
   assert({
@@ -11,6 +12,13 @@ describe('bpl snapshot plugin', async assert => {
     should: 'should add default snapshot directory to config section',
     actual: readSnapshotDir(),
     expected: defaultSnapshotDir,
+  })
+
+  assert({
+    given: 'after being installed',
+    should: 'should add default snapshot servers to config section',
+    actual: readSnapshotServers(),
+    expected: defaultSnapshotServers,
   })
 
   assert({
