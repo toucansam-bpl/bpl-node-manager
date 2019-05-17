@@ -4,7 +4,7 @@ import { lensProp, pipe, view } from 'ramda'
 import { viewSnapshotSection } from './snapshot-section'
 
 export const snapshotServersKey = 'servers'
-export const viewSnapshotServers = view(lensProp(snapshotServersKey))
+export const viewSnapshotServers = view<any, string[]>(lensProp(snapshotServersKey))
 export const readSnapshotServers = pipe(
   readPlugins,
   viewSnapshotSection,

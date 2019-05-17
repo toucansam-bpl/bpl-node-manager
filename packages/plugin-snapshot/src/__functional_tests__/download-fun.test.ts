@@ -1,10 +1,10 @@
 /* tslint:disable:no-floating-promises */
 import { describe } from 'riteway'
 
-import { parseCommand, runCommand, typeEnter } from './cli-testing'
+import { parseCommand, runCommand, typeEnter } from '../cli-testing'
 
 describe('download command', async assert => {
-  Promise.resolve(parseCommand('bpl snapshot:download'))
+  await Promise.resolve(parseCommand('bpl snapshot:download'))
     .then(runCommand)
     .then(async cli => {
       const stdout = await cli.stdout.next().value
