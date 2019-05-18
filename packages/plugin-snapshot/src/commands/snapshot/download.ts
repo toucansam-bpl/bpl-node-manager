@@ -1,3 +1,4 @@
+/* tslint:disable:no-floating-promises */
 import { Command } from '@oclif/command'
 
 import downloadProcess from '../../download/download-process'
