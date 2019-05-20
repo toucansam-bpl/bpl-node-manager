@@ -74,6 +74,7 @@ export const readMessage = async (cli: RunningProcess) => {
   return readStdout(cli)
     .then(extractMessage)
     .then(JSON.parse)
+    .then(o => o.message)
     .catch(ex => console.log(ex))
 }
 
@@ -91,5 +92,5 @@ export const typeEnter = typeText(enterKey)
 export const typeUpArrow = typeText(upArrow)
 
 export const writeMessage = (message: {}) => {
-  console.log(`CLI MESSAGE: ##${JSON.stringify(message)}##`)
+  console.log(`CLI MESSAGE: ##${JSON.stringify({ message })}##`)
 }

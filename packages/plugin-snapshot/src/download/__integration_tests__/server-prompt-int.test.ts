@@ -25,12 +25,12 @@ describe('server prompt', async assert => {
     .then(ignoreStdout)
     .then(ignoreStdout)
     .then(async cli => {
-      const promptResult = await readMessage(cli)
+      const selectedServer = await readMessage(cli)
 
       assert({
         given: 'a snapshot server was selected',
         should: 'return the snapshot server',
-        actual: promptResult.selectedServer,
+        actual: selectedServer,
         expected: 'server 1',
       })
 
