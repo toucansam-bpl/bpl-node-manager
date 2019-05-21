@@ -38,5 +38,17 @@ describe('download command', async assert => {
 
       return cli
     })
+    .then(async cli => {
+      const stdout = await cli.stdout.next().value
+
+      assert({
+        given: 'when given an object with a url',
+        should: 'add a generated filename',
+        actual: /blockpool-io-\d{12}$/.test(stdout),
+        expected: true,
+      })
+
+      return cli
+    })
     .catch((err: Error) => console.log(err))
 })
