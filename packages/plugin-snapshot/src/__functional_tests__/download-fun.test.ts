@@ -32,7 +32,8 @@ describe('download command', async assert => {
       assert({
         given: 'a snapshot server was selected',
         should: 'display downloading progress bar',
-        actual: stdout.indexOf('Downloading snapshot from ') !== -1,
+        actual:
+          stdout.indexOf('Downloading snapshot from https://snapshots.blockpool.io/current') !== -1,
         expected: true,
       })
 
@@ -42,8 +43,8 @@ describe('download command', async assert => {
       const stdout = await cli.stdout.next().value
 
       assert({
-        given: 'when given an object with a url',
-        should: 'add a generated filename',
+        given: 'when snapshot download is complete',
+        should: 'display snapshot path',
         actual: /blockpool-io-\d{12}$/.test(stdout),
         expected: true,
       })

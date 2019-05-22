@@ -3,6 +3,7 @@
 /* tslint:disable:space-before-function-paren */
 import { ChildProcessWithoutNullStreams, spawn } from 'child_process'
 import { curry } from 'ramda'
+import stripAnsi from 'strip-ansi'
 
 interface RunningProcess {
   stdout: Iterator<Promise<string>>
@@ -14,9 +15,7 @@ export const downArrow = '\x1B\x5B\x42'
 export const upArrow = '\x1B\x5B\x41'
 
 export const parseCommand = (commandText: string) => {
-  let command: string
-  let rest: string[]
-  ;[command, ...rest] = commandText.split(' ')
+  const [command, ...rest] = commandText.split(' ')
   return {
     command,
     args: rest,
@@ -32,8 +31,11 @@ export const commandStdout = function*(prompt: ChildProcessWithoutNullStreams) {
   let performReject = (err: Error) => console.log(err)
   prompt.on('error', err => performReject(err))
   prompt.on('exit', () => (isRunning = false))
-  prompt.stdout.on('data', data => {
-    awaitingData(data.toString())
+  prompt.stdout.on('data', rawData => {
+    const data = stripAnsi(rawData.toString())
+    if (!/^\s*$/.test(data)) {
+      awaitingData(data)
+    }
   })
   while (isRunning || receivedData.length > 0) {
     let first: Promise<string>
@@ -51,17 +53,15 @@ export const commandStdout = function*(prompt: ChildProcessWithoutNullStreams) {
   }
 }
 
-export const runCommand = (commandObj: { command: string; args: string[] }) => {
-  const prompt = spawn(commandObj.command, commandObj.args)
-  const stdout = commandStdout(prompt)
-  return {
-    stdin: (text: string) => prompt.stdin.write(text),
-    stdout,
+export const onNextStdout = (assertion: (stdout: string) => void) => {
+  return async (cli: RunningProcess) => {
+    assertion(await cli.stdout.next().value)
+    return cli
   }
 }
 
 export const ignoreStdout = async (cli: RunningProcess) => {
-  console.log('ignoring: ', await readStdout(cli))
+  await readStdout(cli)
   return cli
 }
 
@@ -70,16 +70,29 @@ export const extractMessage = (text: string) => {
   return match === null ? '{}' : match[1]
 }
 
-export const readMessage = async (cli: RunningProcess) => {
-  return readStdout(cli)
-    .then(extractMessage)
-    .then(JSON.parse)
-    .then(o => o.message)
-    .catch(ex => console.log(ex))
+export const readMessage = (assertion: (message: object | string) => void) => {
+  return async (cli: RunningProcess) => {
+    await readStdout(cli)
+      .then(extractMessage)
+      .then(JSON.parse)
+      .then(o => o.message)
+      .then(assertion)
+      .catch(ex => console.log(ex))
+    return cli
+  }
 }
 
 export const readStdout = async (cli: RunningProcess) => {
   return cli.stdout.next().value
+}
+
+export const runCommand = (commandObj: { command: string; args: string[] }) => {
+  const prompt = spawn(commandObj.command, commandObj.args)
+  const stdout = commandStdout(prompt)
+  return {
+    stdin: (text: string) => prompt.stdin.write(text),
+    stdout,
+  }
 }
 
 export const typeText = curry((text: string, cli: RunningProcess) => {
