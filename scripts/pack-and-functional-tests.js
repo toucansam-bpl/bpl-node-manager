@@ -3,6 +3,7 @@ exports.__esModule = true;
 var execa = require("execa");
 var fs_1 = require("fs");
 var path_1 = require("path");
+var config_1 = require("../packages/cli-core/lib/config");
 var packagesDir = path_1.resolve(__dirname, '..', 'packages');
 var localTarballDir = path_1.resolve(__dirname, 'packed');
 fs_1.mkdirSync(localTarballDir);
@@ -44,6 +45,7 @@ packages.forEach(function (packageInfo) {
     fs_1.writeFileSync(packageInfo.packageJsonFile, packageInfo.json);
     execa.shellSync("mv " + packageInfo.tarballFile + " " + packageInfo.localTarballFile);
 });
+process.env.OCLIF_DEBUG = '1';
 packages
     .filter(function (p) { return p.packageName === 'bpl-cli'; })
     .forEach(function (p) {
@@ -53,13 +55,22 @@ packages
         stdio: 'inherit'
     });
 });
+execa.shellSync('node ./runSnapshotInit.js', { stdio: 'inherit' });
 packages
     .filter(function (p) { return p.packageName.indexOf('plugin') !== -1; })
     .forEach(function (p) {
-    execa.shellSync("bpl plugins:install file:" + p.localTarballFile, { stdio: 'inherit' });
+    execa.shellSync("env DEBUG=* bpl plugins:install file:" + p.localTarballFile, {
+        stdio: 'inherit'
+    });
+    execa.shellSync("ls " + config_1.configDir, { stdio: 'inherit' });
     execa.shellSync('npm run test:functional', {
         cwd: p.packageDirectoryPath,
         stdio: 'inherit'
     });
+    execa.shellSync("ls " + config_1.configDir, { stdio: 'inherit' });
+    execa.shellSync("bpl plugins:uninstall " + p.packageDirectoryName.replace('plugin-', ''), {
+        stdio: 'inherit'
+    });
 });
 execa.shellSync("rm -Rf " + localTarballDir);
+process.env.OCLIF_DEBUG = '0';

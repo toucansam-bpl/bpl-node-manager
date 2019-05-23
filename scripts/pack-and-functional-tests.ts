@@ -2,6 +2,9 @@ import * as execa from 'execa'
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'fs'
 import { resolve } from 'path'
 
+import { configDir } from '../packages/cli-core/lib/config'
+import { exec } from 'child_process'
+
 interface Package {
   json: string
   localTarballFile: string
@@ -61,6 +64,8 @@ packages.forEach(packageInfo => {
   execa.shellSync(`mv ${packageInfo.tarballFile} ${packageInfo.localTarballFile}`)
 })
 
+process.env.OCLIF_DEBUG = '1'
+
 packages
   .filter(p => p.packageName === 'bpl-cli')
   .forEach(p => {
@@ -71,14 +76,24 @@ packages
     })
   })
 
+execa.shellSync(`node ${__dirname}/runSnapshotInit.js`, { stdio: 'inherit' })
+
 packages
   .filter(p => p.packageName.indexOf('plugin') !== -1)
   .forEach(p => {
-    execa.shellSync(`bpl plugins:install file:${p.localTarballFile}`, { stdio: 'inherit' })
+    execa.shellSync(`env DEBUG=\* bpl plugins:install file:${p.localTarballFile}`, {
+      stdio: 'inherit',
+    })
+    execa.shellSync(`ls ${configDir}`, { stdio: 'inherit' })
     execa.shellSync('npm run test:functional', {
       cwd: p.packageDirectoryPath,
+      stdio: 'inherit',
+    })
+    execa.shellSync(`ls ${configDir}`, { stdio: 'inherit' })
+    execa.shellSync(`bpl plugins:uninstall ${p.packageDirectoryName.replace('plugin-', '')}`, {
       stdio: 'inherit',
     })
   })
 
 execa.shellSync(`rm -Rf ${localTarballDir}`)
+process.env.OCLIF_DEBUG = '0'
