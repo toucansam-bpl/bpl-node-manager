@@ -53,9 +53,21 @@ export const commandStdout = function*(prompt: ChildProcessWithoutNullStreams) {
   }
 }
 
-export const onNextStdout = (assertion: (stdout: string) => void) => {
+export const onNextStdout = (
+  assertion: (stdout: string) => void,
+  filter: (stdout: string) => boolean = () => true,
+) => {
   return async (cli: RunningProcess) => {
-    assertion(await cli.stdout.next().value)
+    let isMatch = false
+    let nextStdout
+    let nextValue
+    do {
+      nextStdout = cli.stdout.next()
+      nextValue = await nextStdout.value
+      isMatch = filter(nextValue)
+    } while (!isMatch && !nextStdout.done)
+
+    assertion(nextValue)
     return cli
   }
 }
