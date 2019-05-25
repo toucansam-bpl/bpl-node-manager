@@ -1,7 +1,7 @@
 /* tslint:disable:no-floating-promises */
 import { describe } from 'riteway'
 
-import { onNextStdout, parseCommand, runCommand } from '../cli-testing'
+import { onNextStdout, parseCommand, runCommand, typeEnter } from '../cli-testing'
 
 describe('restore command', async assert => {
   await Promise.resolve(parseCommand('bpl snapshot:restore'))
@@ -16,4 +16,5 @@ describe('restore command', async assert => {
         })
       }),
     )
+    .then(typeEnter)
 })
