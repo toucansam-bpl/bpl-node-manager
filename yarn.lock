@@ -923,36 +923,56 @@
     ws "^3.0.0"
 
 "@toucansam-bpl/cli-core@file:packages/cli-core":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
+    "@types/ramda" "^0.26.8"
+    ramda "^0.26.1"
     tslib "^1.9.3"
     typescript "^3.4.5"
 
 "@toucansam-bpl/plugin-monitor@file:packages/plugin-monitor":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/config" "^1.12.12"
     "@oclif/parser" "^3.8.0"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     "@types/node-fetch" "^2.3.3"
     node-fetch "^2.3.0"
     pm2 "^3.5.0"
     tslib "^1.9.3"
 
 "@toucansam-bpl/plugin-node@file:packages/plugin-node":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
     "@oclif/parser" "^3.8.0"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     node-fetch "^2.3.0"
     pm2 "^3.5.0"
     tslib "^1.9.3"
 
+"@toucansam-bpl/plugin-plugins@^1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@toucansam-bpl/plugin-plugins/-/plugin-plugins-1.7.8.tgz#c14f64a1297fb6ab6df9afb933156968e9682927"
+  integrity sha512-tdRSjUt6oaJA+HAaSzcnwEFIkfYFazpTpgNXhQUcjNYzN6VG386gkPsQEDViezRxuBIZ44gF4pNmsAqSUzw38w==
+  dependencies:
+    "@oclif/color" "^0.0.0"
+    "@oclif/command" "^1.5.12"
+    chalk "^2.4.2"
+    cli-ux "^5.2.1"
+    debug "^4.1.0"
+    fs-extra "^7.0.1"
+    http-call "^5.2.2"
+    load-json-file "^5.2.0"
+    npm-run-path "^3.0.0"
+    semver "^5.6.0"
+    tslib "^1.9.3"
+    yarn "^1.15.0"
+
 "@toucansam-bpl/plugin-restart-on-out-of-sync@file:packages/plugin-restart-on-out-of-sync":
-  version "1.0.5-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
@@ -960,15 +980,18 @@
     tslib "^1.9.3"
 
 "@toucansam-bpl/plugin-snapshot@file:packages/plugin-snapshot":
-  version "1.0.9-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     "@types/execa" "^0.9.0"
     "@types/inquirer" "^6.0.1"
+    "@types/ramda" "^0.26.8"
+    cli-ux "^5.2.1"
     execa "^1.0.0"
     inquirer "^6.3.1"
+    node-fetch "^2.6.0"
     ramda "^0.26.1"
     tslib "^1.9.3"
     watch "^1.0.2"
@@ -1025,6 +1048,13 @@
 "@types/node@^8.0.7":
   version "8.10.48"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.48.tgz#e385073561643a9ba6199a1985ffc03530f90781"
+
+"@types/ramda@^0.26.8":
+  version "0.26.33"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.26.33.tgz#5fd1f22381ccf913a3627beb16f468fb57f82d94"
+  integrity sha512-sUCQmKfAWmlbb6PpFqvndbGgTf0bCcmHLJqMYw8ErVS0UoZTTiz952aFedJhV+JERiVH7poh33358c7p0AAN8A==
+  dependencies:
+    ts-toolbelt "^4.7.7"
 
 "@types/through@*":
   version "0.0.29"
@@ -1360,15 +1390,15 @@ boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
 
 "bpl-cli@file:packages/bpl-cli":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
     "@oclif/plugin-autocomplete" "^0.1.0"
     "@oclif/plugin-help" "^2.1.6"
     "@oclif/plugin-not-found" "^1.2.2"
-    "@oclif/plugin-plugins" "git+https://git@github.com/toucansam-bpl/plugin-plugins.git"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
+    "@toucansam-bpl/plugin-plugins" "^1.7.8"
     tslib "^1.9.3"
 
 brace-expansion@^1.1.7:
@@ -2459,12 +2489,16 @@ eslint-scope@^4.0.3:
     estraverse "^4.1.1"
 
 eslint-utils@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-1.3.1.tgz#9a851ba89ee7c460346f97cf8939c7298827e512"
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-1.4.3.tgz#74fec7c54d0776b6f67e0251040b5806564e981f"
+  integrity sha512-fbBN5W2xdY45KulGXmLHZ3c3FHfVYmKg0IrAKGOkT/464PQsx2UeIzfz1RmEci+KLm1bBaAzZAh8+/E+XAeZ8Q==
+  dependencies:
+    eslint-visitor-keys "^1.1.0"
 
-eslint-visitor-keys@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
+eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
+  integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
 eslint@^5.3.0:
   version "5.16.0"
@@ -4257,6 +4291,11 @@ node-fetch-npm@^2.0.2:
 node-fetch@^2.3.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.5.0.tgz#8028c49fc1191bba56a07adc6e2a954644a48501"
+
+node-fetch@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
 node-gyp@^3.8.0:
   version "3.8.0"
@@ -6143,6 +6182,11 @@ ts-node@^8.1.0:
     make-error "^1.1.1"
     source-map-support "^0.5.6"
     yn "^3.0.0"
+
+ts-toolbelt@^4.7.7:
+  version "4.9.20"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-4.9.20.tgz#1ec6a699d69552c7d1631d386a9d0f7630a305fa"
+  integrity sha512-hOMzuaMioBqOqsAqRzu3bIsO7MNxRx+ejstlcEI47jdJhHPoexA0BIUpAh75njuGognfwSVSibw8dHDy9g4iEQ==
 
 tslib@1.9.0:
   version "1.9.0"
