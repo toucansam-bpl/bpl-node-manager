@@ -923,36 +923,56 @@
     ws "^3.0.0"
 
 "@toucansam-bpl/cli-core@file:packages/cli-core":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
+    "@types/ramda" "^0.26.8"
+    ramda "^0.26.1"
     tslib "^1.9.3"
     typescript "^3.4.5"
 
 "@toucansam-bpl/plugin-monitor@file:packages/plugin-monitor":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/config" "^1.12.12"
     "@oclif/parser" "^3.8.0"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     "@types/node-fetch" "^2.3.3"
     node-fetch "^2.3.0"
     pm2 "^3.5.0"
     tslib "^1.9.3"
 
 "@toucansam-bpl/plugin-node@file:packages/plugin-node":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
     "@oclif/parser" "^3.8.0"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     node-fetch "^2.3.0"
     pm2 "^3.5.0"
     tslib "^1.9.3"
 
+"@toucansam-bpl/plugin-plugins@^1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@toucansam-bpl/plugin-plugins/-/plugin-plugins-1.7.8.tgz#c14f64a1297fb6ab6df9afb933156968e9682927"
+  integrity sha512-tdRSjUt6oaJA+HAaSzcnwEFIkfYFazpTpgNXhQUcjNYzN6VG386gkPsQEDViezRxuBIZ44gF4pNmsAqSUzw38w==
+  dependencies:
+    "@oclif/color" "^0.0.0"
+    "@oclif/command" "^1.5.12"
+    chalk "^2.4.2"
+    cli-ux "^5.2.1"
+    debug "^4.1.0"
+    fs-extra "^7.0.1"
+    http-call "^5.2.2"
+    load-json-file "^5.2.0"
+    npm-run-path "^3.0.0"
+    semver "^5.6.0"
+    tslib "^1.9.3"
+    yarn "^1.15.0"
+
 "@toucansam-bpl/plugin-restart-on-out-of-sync@file:packages/plugin-restart-on-out-of-sync":
-  version "1.0.5-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
@@ -960,15 +980,18 @@
     tslib "^1.9.3"
 
 "@toucansam-bpl/plugin-snapshot@file:packages/plugin-snapshot":
-  version "1.0.9-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     "@types/execa" "^0.9.0"
     "@types/inquirer" "^6.0.1"
+    "@types/ramda" "^0.26.8"
+    cli-ux "^5.2.1"
     execa "^1.0.0"
     inquirer "^6.3.1"
+    node-fetch "^2.6.0"
     ramda "^0.26.1"
     tslib "^1.9.3"
     watch "^1.0.2"
@@ -1025,6 +1048,13 @@
 "@types/node@^8.0.7":
   version "8.10.48"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.48.tgz#e385073561643a9ba6199a1985ffc03530f90781"
+
+"@types/ramda@^0.26.8":
+  version "0.26.44"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.26.44.tgz#70bb06f5ae60809dc83a3d804505ee3123443738"
+  integrity sha512-s0cj9rylWw+Ax/AnttCQzMrLZGq/OxAIZgrkRLK1QHJIF6Qabd0//acMCFM6+Xb8Bi8p8PkT2fqpaQveRju/kA==
+  dependencies:
+    ts-toolbelt "^6.3.3"
 
 "@types/through@*":
   version "0.0.29"
@@ -1360,15 +1390,15 @@ boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
 
 "bpl-cli@file:packages/bpl-cli":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
     "@oclif/plugin-autocomplete" "^0.1.0"
     "@oclif/plugin-help" "^2.1.6"
     "@oclif/plugin-not-found" "^1.2.2"
-    "@oclif/plugin-plugins" "git+https://git@github.com/toucansam-bpl/plugin-plugins.git"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
+    "@toucansam-bpl/plugin-plugins" "^1.7.8"
     tslib "^1.9.3"
 
 brace-expansion@^1.1.7:
@@ -3893,8 +3923,9 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
 lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.5, lodash@^4.2.1:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-driver@^1.2.7:
   version "1.2.7"
@@ -4257,6 +4288,11 @@ node-fetch-npm@^2.0.2:
 node-fetch@^2.3.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.5.0.tgz#8028c49fc1191bba56a07adc6e2a954644a48501"
+
+node-fetch@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
 node-gyp@^3.8.0:
   version "3.8.0"
@@ -6143,6 +6179,11 @@ ts-node@^8.1.0:
     make-error "^1.1.1"
     source-map-support "^0.5.6"
     yn "^3.0.0"
+
+ts-toolbelt@^6.3.3:
+  version "6.13.11"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-6.13.11.tgz#46260d1cff0f2d635931df8d32239b73f2ed4f8d"
+  integrity sha512-QmvHwAofS1MAn1ndXCn2AVhxJLipaj4tK26SrhBTiydfgKtbLlU2efpIP/8Jocrc9ynNslZqrhqAesruJMlxCQ==
 
 tslib@1.9.0:
   version "1.9.0"
