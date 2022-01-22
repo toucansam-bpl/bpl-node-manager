@@ -9,7 +9,7 @@
     "@oclif/config": "^1.12.12",
     "@oclif/parser": "^3.8.0",
     "@toucansam-bpl/cli-core": "file:../cli-core",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^3.1.1",
     "pm2": "^3.5.0",
     "tslib": "^1.9.3"
   },
