@@ -923,36 +923,56 @@
     ws "^3.0.0"
 
 "@toucansam-bpl/cli-core@file:packages/cli-core":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
+    "@types/ramda" "^0.26.8"
+    ramda "^0.26.1"
     tslib "^1.9.3"
     typescript "^3.4.5"
 
 "@toucansam-bpl/plugin-monitor@file:packages/plugin-monitor":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/config" "^1.12.12"
     "@oclif/parser" "^3.8.0"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     "@types/node-fetch" "^2.3.3"
     node-fetch "^2.3.0"
     pm2 "^3.5.0"
     tslib "^1.9.3"
 
 "@toucansam-bpl/plugin-node@file:packages/plugin-node":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
     "@oclif/parser" "^3.8.0"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     node-fetch "^2.3.0"
     pm2 "^3.5.0"
     tslib "^1.9.3"
 
+"@toucansam-bpl/plugin-plugins@^1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@toucansam-bpl/plugin-plugins/-/plugin-plugins-1.7.8.tgz#c14f64a1297fb6ab6df9afb933156968e9682927"
+  integrity sha512-tdRSjUt6oaJA+HAaSzcnwEFIkfYFazpTpgNXhQUcjNYzN6VG386gkPsQEDViezRxuBIZ44gF4pNmsAqSUzw38w==
+  dependencies:
+    "@oclif/color" "^0.0.0"
+    "@oclif/command" "^1.5.12"
+    chalk "^2.4.2"
+    cli-ux "^5.2.1"
+    debug "^4.1.0"
+    fs-extra "^7.0.1"
+    http-call "^5.2.2"
+    load-json-file "^5.2.0"
+    npm-run-path "^3.0.0"
+    semver "^5.6.0"
+    tslib "^1.9.3"
+    yarn "^1.15.0"
+
 "@toucansam-bpl/plugin-restart-on-out-of-sync@file:packages/plugin-restart-on-out-of-sync":
-  version "1.0.5-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
@@ -960,15 +980,18 @@
     tslib "^1.9.3"
 
 "@toucansam-bpl/plugin-snapshot@file:packages/plugin-snapshot":
-  version "1.0.9-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
     "@types/execa" "^0.9.0"
     "@types/inquirer" "^6.0.1"
+    "@types/ramda" "^0.26.8"
+    cli-ux "^5.2.1"
     execa "^1.0.0"
     inquirer "^6.3.1"
+    node-fetch "^2.6.0"
     ramda "^0.26.1"
     tslib "^1.9.3"
     watch "^1.0.2"
@@ -1026,6 +1049,13 @@
   version "8.10.48"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.48.tgz#e385073561643a9ba6199a1985ffc03530f90781"
 
+"@types/ramda@^0.26.8":
+  version "0.26.44"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.26.44.tgz#70bb06f5ae60809dc83a3d804505ee3123443738"
+  integrity sha512-s0cj9rylWw+Ax/AnttCQzMrLZGq/OxAIZgrkRLK1QHJIF6Qabd0//acMCFM6+Xb8Bi8p8PkT2fqpaQveRju/kA==
+  dependencies:
+    ts-toolbelt "^6.3.3"
+
 "@types/through@*":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/through/-/through-0.0.29.tgz#72943aac922e179339c651fa34a4428a4d722f93"
@@ -1064,10 +1094,11 @@ agentkeepalive@^3.4.1:
     humanize-ms "^1.2.1"
 
 ajv@^6.5.5, ajv@^6.9.1:
-  version "6.10.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.10.0.tgz#90d0d54439da587cd7e843bfb7045f50bd22bdf1"
+  version "6.12.6"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
+  integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
   dependencies:
-    fast-deep-equal "^2.0.1"
+    fast-deep-equal "^3.1.1"
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
@@ -1360,15 +1391,15 @@ boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
 
 "bpl-cli@file:packages/bpl-cli":
-  version "1.0.8-alpha.0"
+  version "1.0.10-alpha.0"
   dependencies:
     "@oclif/command" "^1.5.13"
     "@oclif/config" "^1.12.12"
     "@oclif/plugin-autocomplete" "^0.1.0"
     "@oclif/plugin-help" "^2.1.6"
     "@oclif/plugin-not-found" "^1.2.2"
-    "@oclif/plugin-plugins" "git+https://git@github.com/toucansam-bpl/plugin-plugins.git"
-    "@toucansam-bpl/cli-core" "file:../cli-core"
+    "@toucansam-bpl/cli-core" "file:packages/cli-core"
+    "@toucansam-bpl/plugin-plugins" "^1.7.8"
     tslib "^1.9.3"
 
 brace-expansion@^1.1.7:
@@ -2659,9 +2690,10 @@ extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
 
-fast-deep-equal@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
+fast-deep-equal@^3.1.1:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
+  integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
 fast-diff@^1.1.2:
   version "1.2.0"
@@ -2679,8 +2711,9 @@ fast-glob@^2.0.2, fast-glob@^2.2.6:
     micromatch "^3.1.10"
 
 fast-json-stable-stringify@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
+  integrity sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==
 
 fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.4:
   version "2.0.6"
@@ -3659,6 +3692,7 @@ json-parse-better-errors@^1.0.0, json-parse-better-errors@^1.0.1:
 json-schema-traverse@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz#69f6a87d9513ab8bb8fe63bdb0979c448e684660"
+  integrity sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
 
 json-schema@0.2.3:
   version "0.2.3"
@@ -4257,6 +4291,13 @@ node-fetch-npm@^2.0.2:
 node-fetch@^2.3.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.5.0.tgz#8028c49fc1191bba56a07adc6e2a954644a48501"
+
+node-fetch@^2.6.0:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-gyp@^3.8.0:
   version "3.8.0"
@@ -5082,6 +5123,7 @@ punycode@^1.4.1:
 punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
+  integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
 q@^1.5.1:
   version "1.5.1"
@@ -6110,6 +6152,11 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
+tr46@~0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+  integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
+
 treeify@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/treeify/-/treeify-1.1.0.tgz#4e31c6a463accd0943879f30667c4fdaff411bb8"
@@ -6143,6 +6190,11 @@ ts-node@^8.1.0:
     make-error "^1.1.1"
     source-map-support "^0.5.6"
     yn "^3.0.0"
+
+ts-toolbelt@^6.3.3:
+  version "6.15.5"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-6.15.5.tgz#cb3b43ed725cb63644782c64fbcad7d8f28c0a83"
+  integrity sha512-FZIXf1ksVyLcfr7M317jbB67XFJhOO1YqdTcuGaq9q5jLUoTikukZ+98TPjKiP2jC5CgmYdWWYs0s2nLSU0/1A==
 
 tslib@1.9.0:
   version "1.9.0"
@@ -6316,8 +6368,9 @@ upath@^1.1.1:
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.2.tgz#3db658600edaeeccbe6db5e684d67ee8c2acd068"
 
 uri-js@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/uri-js/-/uri-js-4.2.2.tgz#94c540e1ff772956e2299507c010aea6c8838eb0"
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/uri-js/-/uri-js-4.4.1.tgz#9b1a52595225859e55f669d928f88c6c57f2a77e"
+  integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
 
@@ -6399,9 +6452,22 @@ wcwidth@^1.0.0:
   dependencies:
     defaults "^1.0.3"
 
+webidl-conversions@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
+  integrity sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
+
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
+
+whatwg-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
+  integrity sha1-lmRU6HZUYuN2RNNib2dCzotwll0=
+  dependencies:
+    tr46 "~0.0.3"
+    webidl-conversions "^3.0.0"
 
 whatwg-url@^7.0.0:
   version "7.0.0"
